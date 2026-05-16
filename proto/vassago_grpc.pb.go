@@ -57,6 +57,7 @@ const (
 	Vassago_SearchSavedTools_FullMethodName           = "/vassago.Vassago/SearchSavedTools"
 	Vassago_UpdateSavedTool_FullMethodName            = "/vassago.Vassago/UpdateSavedTool"
 	Vassago_RemoveSavedTool_FullMethodName            = "/vassago.Vassago/RemoveSavedTool"
+	Vassago_SyncChanges_FullMethodName                = "/vassago.Vassago/SyncChanges"
 )
 
 // VassagoClient is the client API for Vassago service.
@@ -112,6 +113,10 @@ type VassagoClient interface {
 	SearchSavedTools(ctx context.Context, in *SearchSavedToolsRequest, opts ...grpc.CallOption) (*SavedToolList, error)
 	UpdateSavedTool(ctx context.Context, in *UpdateSavedToolRequest, opts ...grpc.CallOption) (*SavedToolEntry, error)
 	RemoveSavedTool(ctx context.Context, in *RemoveSavedToolRequest, opts ...grpc.CallOption) (*RemoveSavedToolResponse, error)
+	// --- Peer Replication ---
+	// SyncChanges returns memory deltas since a given timestamp for a namespace.
+	// Peer daemons call this to pull changes during replication.
+	SyncChanges(ctx context.Context, in *SyncChangesRequest, opts ...grpc.CallOption) (*SyncChangesResponse, error)
 }
 
 type vassagoClient struct {
@@ -499,6 +504,16 @@ func (c *vassagoClient) RemoveSavedTool(ctx context.Context, in *RemoveSavedTool
 	return out, nil
 }
 
+func (c *vassagoClient) SyncChanges(ctx context.Context, in *SyncChangesRequest, opts ...grpc.CallOption) (*SyncChangesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SyncChangesResponse)
+	err := c.cc.Invoke(ctx, Vassago_SyncChanges_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VassagoServer is the server API for Vassago service.
 // All implementations must embed UnimplementedVassagoServer
 // for forward compatibility.
@@ -552,6 +567,10 @@ type VassagoServer interface {
 	SearchSavedTools(context.Context, *SearchSavedToolsRequest) (*SavedToolList, error)
 	UpdateSavedTool(context.Context, *UpdateSavedToolRequest) (*SavedToolEntry, error)
 	RemoveSavedTool(context.Context, *RemoveSavedToolRequest) (*RemoveSavedToolResponse, error)
+	// --- Peer Replication ---
+	// SyncChanges returns memory deltas since a given timestamp for a namespace.
+	// Peer daemons call this to pull changes during replication.
+	SyncChanges(context.Context, *SyncChangesRequest) (*SyncChangesResponse, error)
 	mustEmbedUnimplementedVassagoServer()
 }
 
@@ -666,6 +685,9 @@ func (UnimplementedVassagoServer) UpdateSavedTool(context.Context, *UpdateSavedT
 }
 func (UnimplementedVassagoServer) RemoveSavedTool(context.Context, *RemoveSavedToolRequest) (*RemoveSavedToolResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RemoveSavedTool not implemented")
+}
+func (UnimplementedVassagoServer) SyncChanges(context.Context, *SyncChangesRequest) (*SyncChangesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SyncChanges not implemented")
 }
 func (UnimplementedVassagoServer) mustEmbedUnimplementedVassagoServer() {}
 func (UnimplementedVassagoServer) testEmbeddedByValue()                 {}
@@ -1297,6 +1319,24 @@ func _Vassago_RemoveSavedTool_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Vassago_SyncChanges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncChangesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VassagoServer).SyncChanges(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Vassago_SyncChanges_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VassagoServer).SyncChanges(ctx, req.(*SyncChangesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Vassago_ServiceDesc is the grpc.ServiceDesc for Vassago service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1431,6 +1471,10 @@ var Vassago_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RemoveSavedTool",
 			Handler:    _Vassago_RemoveSavedTool_Handler,
+		},
+		{
+			MethodName: "SyncChanges",
+			Handler:    _Vassago_SyncChanges_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

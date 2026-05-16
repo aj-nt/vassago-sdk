@@ -4543,6 +4543,118 @@ func (x *RemoveSavedToolResponse) GetRemoved() bool {
 	return false
 }
 
+type SyncChangesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PeerId        string                 `protobuf:"bytes,1,opt,name=peer_id,json=peerId,proto3" json:"peer_id,omitempty"` // ID of the requesting peer
+	Namespace     string                 `protobuf:"bytes,2,opt,name=namespace,proto3" json:"namespace,omitempty"`         // Namespace to sync (maps to owner)
+	Since         int64                  `protobuf:"varint,3,opt,name=since,proto3" json:"since,omitempty"`                // Unix timestamp — only return entries updated after this
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SyncChangesRequest) Reset() {
+	*x = SyncChangesRequest{}
+	mi := &file_vassago_proto_msgTypes[69]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SyncChangesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SyncChangesRequest) ProtoMessage() {}
+
+func (x *SyncChangesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_vassago_proto_msgTypes[69]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SyncChangesRequest.ProtoReflect.Descriptor instead.
+func (*SyncChangesRequest) Descriptor() ([]byte, []int) {
+	return file_vassago_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *SyncChangesRequest) GetPeerId() string {
+	if x != nil {
+		return x.PeerId
+	}
+	return ""
+}
+
+func (x *SyncChangesRequest) GetNamespace() string {
+	if x != nil {
+		return x.Namespace
+	}
+	return ""
+}
+
+func (x *SyncChangesRequest) GetSince() int64 {
+	if x != nil {
+		return x.Since
+	}
+	return 0
+}
+
+type SyncChangesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Entries       []*MemoryEntry         `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"`                          // Memory entries changed since the given timestamp
+	ServerTime    int64                  `protobuf:"varint,2,opt,name=server_time,json=serverTime,proto3" json:"server_time,omitempty"` // Current server timestamp (for the peer's next since)
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SyncChangesResponse) Reset() {
+	*x = SyncChangesResponse{}
+	mi := &file_vassago_proto_msgTypes[70]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SyncChangesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SyncChangesResponse) ProtoMessage() {}
+
+func (x *SyncChangesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_vassago_proto_msgTypes[70]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SyncChangesResponse.ProtoReflect.Descriptor instead.
+func (*SyncChangesResponse) Descriptor() ([]byte, []int) {
+	return file_vassago_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *SyncChangesResponse) GetEntries() []*MemoryEntry {
+	if x != nil {
+		return x.Entries
+	}
+	return nil
+}
+
+func (x *SyncChangesResponse) GetServerTime() int64 {
+	if x != nil {
+		return x.ServerTime
+	}
+	return 0
+}
+
 var File_vassago_proto protoreflect.FileDescriptor
 
 const file_vassago_proto_rawDesc = "" +
@@ -4953,13 +5065,21 @@ const file_vassago_proto_rawDesc = "" +
 	"\x16RemoveSavedToolRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"3\n" +
 	"\x17RemoveSavedToolResponse\x12\x18\n" +
-	"\aremoved\x18\x01 \x01(\bR\aremoved*\xb3\x01\n" +
+	"\aremoved\x18\x01 \x01(\bR\aremoved\"a\n" +
+	"\x12SyncChangesRequest\x12\x17\n" +
+	"\apeer_id\x18\x01 \x01(\tR\x06peerId\x12\x1c\n" +
+	"\tnamespace\x18\x02 \x01(\tR\tnamespace\x12\x14\n" +
+	"\x05since\x18\x03 \x01(\x03R\x05since\"f\n" +
+	"\x13SyncChangesResponse\x12.\n" +
+	"\aentries\x18\x01 \x03(\v2\x14.vassago.MemoryEntryR\aentries\x12\x1f\n" +
+	"\vserver_time\x18\x02 \x01(\x03R\n" +
+	"serverTime*\xb3\x01\n" +
 	"\x10ConsolidateScope\x12!\n" +
 	"\x1dCONSOLIDATE_SCOPE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15CONSOLIDATE_SCOPE_ALL\x10\x01\x12\"\n" +
 	"\x1eCONSOLIDATE_SCOPE_OBSERVATIONS\x10\x02\x12\x1e\n" +
 	"\x1aCONSOLIDATE_SCOPE_CATEGORY\x10\x03\x12\x1d\n" +
-	"\x19CONSOLIDATE_SCOPE_EXPIRED\x10\x042\xf3\x12\n" +
+	"\x19CONSOLIDATE_SCOPE_EXPIRED\x10\x042\xbd\x13\n" +
 	"\aVassago\x12A\n" +
 	"\x04Ping\x12\x1b.vassago.HealthCheckRequest\x1a\x1c.vassago.HealthCheckResponse\x12B\n" +
 	"\tAddMemory\x12\x19.vassago.AddMemoryRequest\x1a\x1a.vassago.AddMemoryResponse\x12<\n" +
@@ -5000,7 +5120,8 @@ const file_vassago_proto_rawDesc = "" +
 	"\x0eListSavedTools\x12\x1e.vassago.ListSavedToolsRequest\x1a\x16.vassago.SavedToolList\x12L\n" +
 	"\x10SearchSavedTools\x12 .vassago.SearchSavedToolsRequest\x1a\x16.vassago.SavedToolList\x12K\n" +
 	"\x0fUpdateSavedTool\x12\x1f.vassago.UpdateSavedToolRequest\x1a\x17.vassago.SavedToolEntry\x12T\n" +
-	"\x0fRemoveSavedTool\x12\x1f.vassago.RemoveSavedToolRequest\x1a .vassago.RemoveSavedToolResponse2\x88\x01\n" +
+	"\x0fRemoveSavedTool\x12\x1f.vassago.RemoveSavedToolRequest\x1a .vassago.RemoveSavedToolResponse\x12H\n" +
+	"\vSyncChanges\x12\x1b.vassago.SyncChangesRequest\x1a\x1c.vassago.SyncChangesResponse2\x88\x01\n" +
 	"\tAgentChat\x128\n" +
 	"\n" +
 	"ChatStream\x12\x14.vassago.ChatRequest\x1a\x12.vassago.ChatEvent0\x01\x12A\n" +
@@ -5024,7 +5145,7 @@ func file_vassago_proto_rawDescGZIP() []byte {
 }
 
 var file_vassago_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_vassago_proto_msgTypes = make([]protoimpl.MessageInfo, 69)
+var file_vassago_proto_msgTypes = make([]protoimpl.MessageInfo, 71)
 var file_vassago_proto_goTypes = []any{
 	(ConsolidateScope)(0),                     // 0: vassago.ConsolidateScope
 	(UpdateEvent_EventType)(0),                // 1: vassago.UpdateEvent.EventType
@@ -5098,6 +5219,8 @@ var file_vassago_proto_goTypes = []any{
 	(*UpdateSavedToolRequest)(nil),            // 69: vassago.UpdateSavedToolRequest
 	(*RemoveSavedToolRequest)(nil),            // 70: vassago.RemoveSavedToolRequest
 	(*RemoveSavedToolResponse)(nil),           // 71: vassago.RemoveSavedToolResponse
+	(*SyncChangesRequest)(nil),                // 72: vassago.SyncChangesRequest
+	(*SyncChangesResponse)(nil),               // 73: vassago.SyncChangesResponse
 }
 var file_vassago_proto_depIdxs = []int32{
 	3,  // 0: vassago.AddMemoryResponse.entry:type_name -> vassago.MemoryEntry
@@ -5120,93 +5243,96 @@ var file_vassago_proto_depIdxs = []int32{
 	49, // 17: vassago.CronJobList.jobs:type_name -> vassago.CronJob
 	55, // 18: vassago.SkillList.skills:type_name -> vassago.SkillEntry
 	63, // 19: vassago.SavedToolList.tools:type_name -> vassago.SavedToolEntry
-	41, // 20: vassago.Vassago.Ping:input_type -> vassago.HealthCheckRequest
-	4,  // 21: vassago.Vassago.AddMemory:input_type -> vassago.AddMemoryRequest
-	6,  // 22: vassago.Vassago.GetMemory:input_type -> vassago.GetMemoryRequest
-	7,  // 23: vassago.Vassago.UpdateMemory:input_type -> vassago.UpdateMemoryRequest
-	8,  // 24: vassago.Vassago.RemoveMemory:input_type -> vassago.RemoveMemoryRequest
-	10, // 25: vassago.Vassago.ListMemories:input_type -> vassago.ListMemoriesRequest
-	12, // 26: vassago.Vassago.Search:input_type -> vassago.SearchRequest
-	14, // 27: vassago.Vassago.SearchSessions:input_type -> vassago.SearchSessionsRequest
-	16, // 28: vassago.Vassago.ListSessions:input_type -> vassago.ListSessionsRequest
-	19, // 29: vassago.Vassago.GetHotBlock:input_type -> vassago.HotBlockRequest
-	23, // 30: vassago.Vassago.CreateSession:input_type -> vassago.CreateSessionRequest
-	24, // 31: vassago.Vassago.AddMessages:input_type -> vassago.AddMessagesRequest
-	25, // 32: vassago.Vassago.EndSession:input_type -> vassago.EndSessionRequest
-	27, // 33: vassago.Vassago.GetSession:input_type -> vassago.GetSessionRequest
-	28, // 34: vassago.Vassago.Consolidate:input_type -> vassago.ConsolidateRequest
-	30, // 35: vassago.Vassago.GetConsolidationCandidates:input_type -> vassago.GetConsolidationCandidatesRequest
-	33, // 36: vassago.Vassago.Subscribe:input_type -> vassago.SubscribeRequest
-	36, // 37: vassago.Vassago.RegisterAgent:input_type -> vassago.RegisterAgentRequest
-	38, // 38: vassago.Vassago.Heartbeat:input_type -> vassago.AgentId
-	39, // 39: vassago.Vassago.ChatStream:input_type -> vassago.ChatRequest
-	45, // 40: vassago.Vassago.AddTodo:input_type -> vassago.AddTodoRequest
-	46, // 41: vassago.Vassago.ListTodos:input_type -> vassago.ListTodosRequest
-	47, // 42: vassago.Vassago.CompleteTodo:input_type -> vassago.CompleteTodoRequest
-	48, // 43: vassago.Vassago.RemoveTodo:input_type -> vassago.RemoveTodoRequest
-	56, // 44: vassago.Vassago.AddSkill:input_type -> vassago.AddSkillRequest
-	57, // 45: vassago.Vassago.GetSkill:input_type -> vassago.GetSkillRequest
-	58, // 46: vassago.Vassago.ListSkills:input_type -> vassago.ListSkillsRequest
-	60, // 47: vassago.Vassago.RemoveSkill:input_type -> vassago.RemoveSkillRequest
-	62, // 48: vassago.Vassago.SearchSkills:input_type -> vassago.SearchSkillsRequest
-	64, // 49: vassago.Vassago.AddSavedTool:input_type -> vassago.AddSavedToolRequest
-	65, // 50: vassago.Vassago.GetSavedTool:input_type -> vassago.GetSavedToolRequest
-	66, // 51: vassago.Vassago.ListSavedTools:input_type -> vassago.ListSavedToolsRequest
-	68, // 52: vassago.Vassago.SearchSavedTools:input_type -> vassago.SearchSavedToolsRequest
-	69, // 53: vassago.Vassago.UpdateSavedTool:input_type -> vassago.UpdateSavedToolRequest
-	70, // 54: vassago.Vassago.RemoveSavedTool:input_type -> vassago.RemoveSavedToolRequest
-	39, // 55: vassago.AgentChat.ChatStream:input_type -> vassago.ChatRequest
-	41, // 56: vassago.AgentChat.Ping:input_type -> vassago.HealthCheckRequest
-	50, // 57: vassago.CronService.CreateCronJob:input_type -> vassago.CreateCronJobRequest
-	51, // 58: vassago.CronService.ListCronJobs:input_type -> vassago.ListCronJobsRequest
-	53, // 59: vassago.CronService.UpdateCronJob:input_type -> vassago.UpdateCronJobRequest
-	54, // 60: vassago.CronService.DeleteCronJob:input_type -> vassago.DeleteCronJobRequest
-	42, // 61: vassago.Vassago.Ping:output_type -> vassago.HealthCheckResponse
-	5,  // 62: vassago.Vassago.AddMemory:output_type -> vassago.AddMemoryResponse
-	3,  // 63: vassago.Vassago.GetMemory:output_type -> vassago.MemoryEntry
-	3,  // 64: vassago.Vassago.UpdateMemory:output_type -> vassago.MemoryEntry
-	9,  // 65: vassago.Vassago.RemoveMemory:output_type -> vassago.RemoveMemoryResponse
-	11, // 66: vassago.Vassago.ListMemories:output_type -> vassago.MemoryList
-	13, // 67: vassago.Vassago.Search:output_type -> vassago.SearchResponse
-	15, // 68: vassago.Vassago.SearchSessions:output_type -> vassago.SearchSessionsResponse
-	17, // 69: vassago.Vassago.ListSessions:output_type -> vassago.ListSessionsResponse
-	20, // 70: vassago.Vassago.GetHotBlock:output_type -> vassago.HotBlockResponse
-	21, // 71: vassago.Vassago.CreateSession:output_type -> vassago.Session
-	21, // 72: vassago.Vassago.AddMessages:output_type -> vassago.Session
-	26, // 73: vassago.Vassago.EndSession:output_type -> vassago.EndSessionResponse
-	21, // 74: vassago.Vassago.GetSession:output_type -> vassago.Session
-	29, // 75: vassago.Vassago.Consolidate:output_type -> vassago.ConsolidateResponse
-	32, // 76: vassago.Vassago.GetConsolidationCandidates:output_type -> vassago.ConsolidationCandidatesResponse
-	34, // 77: vassago.Vassago.Subscribe:output_type -> vassago.UpdateEvent
-	37, // 78: vassago.Vassago.RegisterAgent:output_type -> vassago.RegisterAgentResponse
-	43, // 79: vassago.Vassago.Heartbeat:output_type -> vassago.Empty
-	40, // 80: vassago.Vassago.ChatStream:output_type -> vassago.ChatEvent
-	44, // 81: vassago.Vassago.AddTodo:output_type -> vassago.TodoItem
-	44, // 82: vassago.Vassago.ListTodos:output_type -> vassago.TodoItem
-	44, // 83: vassago.Vassago.CompleteTodo:output_type -> vassago.TodoItem
-	43, // 84: vassago.Vassago.RemoveTodo:output_type -> vassago.Empty
-	55, // 85: vassago.Vassago.AddSkill:output_type -> vassago.SkillEntry
-	55, // 86: vassago.Vassago.GetSkill:output_type -> vassago.SkillEntry
-	59, // 87: vassago.Vassago.ListSkills:output_type -> vassago.SkillList
-	61, // 88: vassago.Vassago.RemoveSkill:output_type -> vassago.RemoveSkillResponse
-	59, // 89: vassago.Vassago.SearchSkills:output_type -> vassago.SkillList
-	63, // 90: vassago.Vassago.AddSavedTool:output_type -> vassago.SavedToolEntry
-	63, // 91: vassago.Vassago.GetSavedTool:output_type -> vassago.SavedToolEntry
-	67, // 92: vassago.Vassago.ListSavedTools:output_type -> vassago.SavedToolList
-	67, // 93: vassago.Vassago.SearchSavedTools:output_type -> vassago.SavedToolList
-	63, // 94: vassago.Vassago.UpdateSavedTool:output_type -> vassago.SavedToolEntry
-	71, // 95: vassago.Vassago.RemoveSavedTool:output_type -> vassago.RemoveSavedToolResponse
-	40, // 96: vassago.AgentChat.ChatStream:output_type -> vassago.ChatEvent
-	42, // 97: vassago.AgentChat.Ping:output_type -> vassago.HealthCheckResponse
-	49, // 98: vassago.CronService.CreateCronJob:output_type -> vassago.CronJob
-	52, // 99: vassago.CronService.ListCronJobs:output_type -> vassago.CronJobList
-	49, // 100: vassago.CronService.UpdateCronJob:output_type -> vassago.CronJob
-	43, // 101: vassago.CronService.DeleteCronJob:output_type -> vassago.Empty
-	61, // [61:102] is the sub-list for method output_type
-	20, // [20:61] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	3,  // 20: vassago.SyncChangesResponse.entries:type_name -> vassago.MemoryEntry
+	41, // 21: vassago.Vassago.Ping:input_type -> vassago.HealthCheckRequest
+	4,  // 22: vassago.Vassago.AddMemory:input_type -> vassago.AddMemoryRequest
+	6,  // 23: vassago.Vassago.GetMemory:input_type -> vassago.GetMemoryRequest
+	7,  // 24: vassago.Vassago.UpdateMemory:input_type -> vassago.UpdateMemoryRequest
+	8,  // 25: vassago.Vassago.RemoveMemory:input_type -> vassago.RemoveMemoryRequest
+	10, // 26: vassago.Vassago.ListMemories:input_type -> vassago.ListMemoriesRequest
+	12, // 27: vassago.Vassago.Search:input_type -> vassago.SearchRequest
+	14, // 28: vassago.Vassago.SearchSessions:input_type -> vassago.SearchSessionsRequest
+	16, // 29: vassago.Vassago.ListSessions:input_type -> vassago.ListSessionsRequest
+	19, // 30: vassago.Vassago.GetHotBlock:input_type -> vassago.HotBlockRequest
+	23, // 31: vassago.Vassago.CreateSession:input_type -> vassago.CreateSessionRequest
+	24, // 32: vassago.Vassago.AddMessages:input_type -> vassago.AddMessagesRequest
+	25, // 33: vassago.Vassago.EndSession:input_type -> vassago.EndSessionRequest
+	27, // 34: vassago.Vassago.GetSession:input_type -> vassago.GetSessionRequest
+	28, // 35: vassago.Vassago.Consolidate:input_type -> vassago.ConsolidateRequest
+	30, // 36: vassago.Vassago.GetConsolidationCandidates:input_type -> vassago.GetConsolidationCandidatesRequest
+	33, // 37: vassago.Vassago.Subscribe:input_type -> vassago.SubscribeRequest
+	36, // 38: vassago.Vassago.RegisterAgent:input_type -> vassago.RegisterAgentRequest
+	38, // 39: vassago.Vassago.Heartbeat:input_type -> vassago.AgentId
+	39, // 40: vassago.Vassago.ChatStream:input_type -> vassago.ChatRequest
+	45, // 41: vassago.Vassago.AddTodo:input_type -> vassago.AddTodoRequest
+	46, // 42: vassago.Vassago.ListTodos:input_type -> vassago.ListTodosRequest
+	47, // 43: vassago.Vassago.CompleteTodo:input_type -> vassago.CompleteTodoRequest
+	48, // 44: vassago.Vassago.RemoveTodo:input_type -> vassago.RemoveTodoRequest
+	56, // 45: vassago.Vassago.AddSkill:input_type -> vassago.AddSkillRequest
+	57, // 46: vassago.Vassago.GetSkill:input_type -> vassago.GetSkillRequest
+	58, // 47: vassago.Vassago.ListSkills:input_type -> vassago.ListSkillsRequest
+	60, // 48: vassago.Vassago.RemoveSkill:input_type -> vassago.RemoveSkillRequest
+	62, // 49: vassago.Vassago.SearchSkills:input_type -> vassago.SearchSkillsRequest
+	64, // 50: vassago.Vassago.AddSavedTool:input_type -> vassago.AddSavedToolRequest
+	65, // 51: vassago.Vassago.GetSavedTool:input_type -> vassago.GetSavedToolRequest
+	66, // 52: vassago.Vassago.ListSavedTools:input_type -> vassago.ListSavedToolsRequest
+	68, // 53: vassago.Vassago.SearchSavedTools:input_type -> vassago.SearchSavedToolsRequest
+	69, // 54: vassago.Vassago.UpdateSavedTool:input_type -> vassago.UpdateSavedToolRequest
+	70, // 55: vassago.Vassago.RemoveSavedTool:input_type -> vassago.RemoveSavedToolRequest
+	72, // 56: vassago.Vassago.SyncChanges:input_type -> vassago.SyncChangesRequest
+	39, // 57: vassago.AgentChat.ChatStream:input_type -> vassago.ChatRequest
+	41, // 58: vassago.AgentChat.Ping:input_type -> vassago.HealthCheckRequest
+	50, // 59: vassago.CronService.CreateCronJob:input_type -> vassago.CreateCronJobRequest
+	51, // 60: vassago.CronService.ListCronJobs:input_type -> vassago.ListCronJobsRequest
+	53, // 61: vassago.CronService.UpdateCronJob:input_type -> vassago.UpdateCronJobRequest
+	54, // 62: vassago.CronService.DeleteCronJob:input_type -> vassago.DeleteCronJobRequest
+	42, // 63: vassago.Vassago.Ping:output_type -> vassago.HealthCheckResponse
+	5,  // 64: vassago.Vassago.AddMemory:output_type -> vassago.AddMemoryResponse
+	3,  // 65: vassago.Vassago.GetMemory:output_type -> vassago.MemoryEntry
+	3,  // 66: vassago.Vassago.UpdateMemory:output_type -> vassago.MemoryEntry
+	9,  // 67: vassago.Vassago.RemoveMemory:output_type -> vassago.RemoveMemoryResponse
+	11, // 68: vassago.Vassago.ListMemories:output_type -> vassago.MemoryList
+	13, // 69: vassago.Vassago.Search:output_type -> vassago.SearchResponse
+	15, // 70: vassago.Vassago.SearchSessions:output_type -> vassago.SearchSessionsResponse
+	17, // 71: vassago.Vassago.ListSessions:output_type -> vassago.ListSessionsResponse
+	20, // 72: vassago.Vassago.GetHotBlock:output_type -> vassago.HotBlockResponse
+	21, // 73: vassago.Vassago.CreateSession:output_type -> vassago.Session
+	21, // 74: vassago.Vassago.AddMessages:output_type -> vassago.Session
+	26, // 75: vassago.Vassago.EndSession:output_type -> vassago.EndSessionResponse
+	21, // 76: vassago.Vassago.GetSession:output_type -> vassago.Session
+	29, // 77: vassago.Vassago.Consolidate:output_type -> vassago.ConsolidateResponse
+	32, // 78: vassago.Vassago.GetConsolidationCandidates:output_type -> vassago.ConsolidationCandidatesResponse
+	34, // 79: vassago.Vassago.Subscribe:output_type -> vassago.UpdateEvent
+	37, // 80: vassago.Vassago.RegisterAgent:output_type -> vassago.RegisterAgentResponse
+	43, // 81: vassago.Vassago.Heartbeat:output_type -> vassago.Empty
+	40, // 82: vassago.Vassago.ChatStream:output_type -> vassago.ChatEvent
+	44, // 83: vassago.Vassago.AddTodo:output_type -> vassago.TodoItem
+	44, // 84: vassago.Vassago.ListTodos:output_type -> vassago.TodoItem
+	44, // 85: vassago.Vassago.CompleteTodo:output_type -> vassago.TodoItem
+	43, // 86: vassago.Vassago.RemoveTodo:output_type -> vassago.Empty
+	55, // 87: vassago.Vassago.AddSkill:output_type -> vassago.SkillEntry
+	55, // 88: vassago.Vassago.GetSkill:output_type -> vassago.SkillEntry
+	59, // 89: vassago.Vassago.ListSkills:output_type -> vassago.SkillList
+	61, // 90: vassago.Vassago.RemoveSkill:output_type -> vassago.RemoveSkillResponse
+	59, // 91: vassago.Vassago.SearchSkills:output_type -> vassago.SkillList
+	63, // 92: vassago.Vassago.AddSavedTool:output_type -> vassago.SavedToolEntry
+	63, // 93: vassago.Vassago.GetSavedTool:output_type -> vassago.SavedToolEntry
+	67, // 94: vassago.Vassago.ListSavedTools:output_type -> vassago.SavedToolList
+	67, // 95: vassago.Vassago.SearchSavedTools:output_type -> vassago.SavedToolList
+	63, // 96: vassago.Vassago.UpdateSavedTool:output_type -> vassago.SavedToolEntry
+	71, // 97: vassago.Vassago.RemoveSavedTool:output_type -> vassago.RemoveSavedToolResponse
+	73, // 98: vassago.Vassago.SyncChanges:output_type -> vassago.SyncChangesResponse
+	40, // 99: vassago.AgentChat.ChatStream:output_type -> vassago.ChatEvent
+	42, // 100: vassago.AgentChat.Ping:output_type -> vassago.HealthCheckResponse
+	49, // 101: vassago.CronService.CreateCronJob:output_type -> vassago.CronJob
+	52, // 102: vassago.CronService.ListCronJobs:output_type -> vassago.CronJobList
+	49, // 103: vassago.CronService.UpdateCronJob:output_type -> vassago.CronJob
+	43, // 104: vassago.CronService.DeleteCronJob:output_type -> vassago.Empty
+	63, // [63:105] is the sub-list for method output_type
+	21, // [21:63] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for extension type_name
+	21, // [21:21] is the sub-list for extension extendee
+	0,  // [0:21] is the sub-list for field type_name
 }
 
 func init() { file_vassago_proto_init() }
@@ -5238,7 +5364,7 @@ func file_vassago_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_vassago_proto_rawDesc), len(file_vassago_proto_rawDesc)),
 			NumEnums:      3,
-			NumMessages:   69,
+			NumMessages:   71,
 			NumExtensions: 0,
 			NumServices:   3,
 		},

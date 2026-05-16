@@ -71,6 +71,11 @@ service Vassago {
   rpc SearchSavedTools(SearchSavedToolsRequest) returns (SavedToolList);
   rpc UpdateSavedTool(UpdateSavedToolRequest) returns (SavedToolEntry);
   rpc RemoveSavedTool(RemoveSavedToolRequest) returns (RemoveSavedToolResponse);
+
+  // --- Peer Replication ---
+  // SyncChanges returns memory deltas since a given timestamp for a namespace.
+  // Peer daemons call this to pull changes during replication.
+  rpc SyncChanges(SyncChangesRequest) returns (SyncChangesResponse);
 }
 
 // AgentChat is a lightweight gRPC service exposed by the agent binary
@@ -578,4 +583,17 @@ message RemoveSavedToolRequest {
 
 message RemoveSavedToolResponse {
   bool removed = 1;                     // Whether removal was successful
+}
+
+// --- Peer Replication Messages ---
+
+message SyncChangesRequest {
+  string peer_id = 1;     // ID of the requesting peer
+  string namespace = 2;   // Namespace to sync (maps to owner)
+  int64 since = 3;        // Unix timestamp — only return entries updated after this
+}
+
+message SyncChangesResponse {
+  repeated MemoryEntry entries = 1;  // Memory entries changed since the given timestamp
+  int64 server_time = 2;             // Current server timestamp (for the peer's next since)
 }
