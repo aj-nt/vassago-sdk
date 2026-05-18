@@ -76,6 +76,17 @@ service Vassago {
   // SyncChanges returns memory deltas since a given timestamp for a namespace.
   // Peer daemons call this to pull changes during replication.
   rpc SyncChanges(SyncChangesRequest) returns (SyncChangesResponse);
+
+  // --- Task Management (Multi-Agent Orchestration) ---
+  rpc AddTask(AddTaskRequest) returns (TaskEntry);
+  rpc GetTask(GetTaskRequest) returns (TaskEntry);
+  rpc ClaimTask(ClaimTaskRequest) returns (TaskEntry);
+  rpc CompleteTask(CompleteTaskRequest) returns (TaskEntry);
+  rpc FailTask(FailTaskRequest) returns (TaskEntry);
+  rpc FindReadyTasks(FindReadyTasksRequest) returns (TaskList);
+  rpc ListTasksByStatus(ListTasksByStatusRequest) returns (TaskList);
+  rpc ResetTimedOutTasks(ResetTimedOutTasksRequest) returns (ResetTimedOutTasksResponse);
+  rpc DeleteTask(DeleteTaskRequest) returns (DeleteTaskResponse);
 }
 
 // AgentChat is a lightweight gRPC service exposed by the agent binary
@@ -596,4 +607,84 @@ message SyncChangesRequest {
 message SyncChangesResponse {
   repeated MemoryEntry entries = 1;  // Memory entries changed since the given timestamp
   int64 server_time = 2;             // Current server timestamp (for the peer's next since)
+}
+
+
+// --- Task Management Messages (Multi-Agent Orchestration) ---
+
+message TaskEntry {
+  string id = 1;
+  string parent_ids = 2;              // JSON array of parent task IDs
+  string status = 3;                  // ready, claimed, done, failed, dead_letter
+  string agent_type = 4;
+  string assigned_agent = 5;
+  string goal = 6;
+  string context = 7;                 // JSON: repo_path, tool config, etc.
+  string result_key = 8;
+  int32 priority = 9;
+  int64 created_at = 10;
+  int64 claimed_at = 11;
+  int64 completed_at = 12;
+  int32 ttl_seconds = 13;
+  int32 retry_count = 14;
+  int32 max_retries = 15;
+}
+
+message AddTaskRequest {
+  string id = 1;
+  string agent_type = 2;
+  string goal = 3;
+  string context = 4;                 // JSON, default "{}"
+  int32 priority = 5;                 // default 3
+  int32 ttl_seconds = 6;              // default 300
+  int32 max_retries = 7;              // default 2
+}
+
+message GetTaskRequest {
+  string id = 1;
+}
+
+message ClaimTaskRequest {
+  string task_id = 1;
+  string agent_id = 2;
+}
+
+message CompleteTaskRequest {
+  string task_id = 1;
+  string result_key = 2;
+}
+
+message FailTaskRequest {
+  string task_id = 1;
+}
+
+message FindReadyTasksRequest {
+  string agent_type = 1;              // empty = all agent types
+  int32 limit = 2;                    // default 20
+}
+
+message ListTasksByStatusRequest {
+  string status = 1;                  // empty = all statuses
+  int32 limit = 2;                    // default 50
+}
+
+message TaskList {
+  repeated TaskEntry tasks = 1;
+}
+
+message ResetTimedOutTasksRequest {
+  // empty — scans all claimed tasks past TTL
+}
+
+message ResetTimedOutTasksResponse {
+  repeated string reset_ids = 1;
+  int32 count = 2;
+}
+
+message DeleteTaskRequest {
+  string id = 1;
+}
+
+message DeleteTaskResponse {
+  bool deleted = 1;
 }

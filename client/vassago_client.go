@@ -10,6 +10,32 @@ import (
 	pb "github.com/aj-nt/vassago-sdk/proto"
 )
 
+
+// TaskEntry wraps a proto TaskEntry for the SDK API.
+type TaskEntry struct {
+	Id            string
+	ParentIds     string
+	Status        string
+	AgentType     string
+	AssignedAgent string
+	Goal          string
+	Context       string
+	ResultKey     string
+	Priority      int32
+	CreatedAt     int64
+	ClaimedAt     int64
+	CompletedAt   int64
+	TtlSeconds    int32
+	RetryCount    int32
+	MaxRetries    int32
+}
+
+// ResetTimedOutResp holds the response from ResetTimedOutTasks.
+type ResetTimedOutResp struct {
+	ResetIds []string
+	Count    int32
+}
+
 // MnemoClient is an interface for interacting with the Vassago daemon.
 type MnemoClient interface {
 	// IsConnected returns true if connected to the daemon.
@@ -116,6 +142,35 @@ type MnemoClient interface {
 
 	// RemoveSavedTool deletes a saved tool.
 	RemoveSavedTool(ctx context.Context, id string) (bool, error)
+
+	// --- Task Management (Multi-Agent Orchestration) ---
+
+	// AddTask creates a new orchestration task.
+	AddTask(ctx context.Context, id, agentType, goal, context string, priority, ttlSeconds, maxRetries int32) (*TaskEntry, error)
+
+	// GetTask retrieves a task by ID.
+	GetTask(ctx context.Context, id string) (*TaskEntry, error)
+
+	// ClaimTask atomically claims a ready task.
+	ClaimTask(ctx context.Context, taskID, agentID string) (*TaskEntry, error)
+
+	// CompleteTask marks a task as done.
+	CompleteTask(ctx context.Context, taskID, resultKey string) (*TaskEntry, error)
+
+	// FailTask marks a claimed task as failed.
+	FailTask(ctx context.Context, taskID string) (*TaskEntry, error)
+
+	// FindReadyTasks returns ready tasks, optionally filtered by agent_type.
+	FindReadyTasks(ctx context.Context, agentType string, limit int32) ([]*TaskEntry, error)
+
+	// ListTasksByStatus returns tasks filtered by optional status.
+	ListTasksByStatus(ctx context.Context, status string, limit int32) ([]*TaskEntry, error)
+
+	// ResetTimedOutTasks resets claimed tasks past their TTL.
+	ResetTimedOutTasks(ctx context.Context) (*ResetTimedOutResp, error)
+
+	// DeleteTask removes a task.
+	DeleteTask(ctx context.Context, id string) (bool, error)
 
 	// Close closes the connection to the daemon.
 	Close() error

@@ -5,7 +5,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v7.34.1
-// source: vassago.proto
+// source: proto/vassago.proto
 
 package proto
 
@@ -63,11 +63,11 @@ func (x ConsolidateScope) String() string {
 }
 
 func (ConsolidateScope) Descriptor() protoreflect.EnumDescriptor {
-	return file_vassago_proto_enumTypes[0].Descriptor()
+	return file_proto_vassago_proto_enumTypes[0].Descriptor()
 }
 
 func (ConsolidateScope) Type() protoreflect.EnumType {
-	return &file_vassago_proto_enumTypes[0]
+	return &file_proto_vassago_proto_enumTypes[0]
 }
 
 func (x ConsolidateScope) Number() protoreflect.EnumNumber {
@@ -76,7 +76,7 @@ func (x ConsolidateScope) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ConsolidateScope.Descriptor instead.
 func (ConsolidateScope) EnumDescriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{0}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{0}
 }
 
 type UpdateEvent_EventType int32
@@ -121,11 +121,11 @@ func (x UpdateEvent_EventType) String() string {
 }
 
 func (UpdateEvent_EventType) Descriptor() protoreflect.EnumDescriptor {
-	return file_vassago_proto_enumTypes[1].Descriptor()
+	return file_proto_vassago_proto_enumTypes[1].Descriptor()
 }
 
 func (UpdateEvent_EventType) Type() protoreflect.EnumType {
-	return &file_vassago_proto_enumTypes[1]
+	return &file_proto_vassago_proto_enumTypes[1]
 }
 
 func (x UpdateEvent_EventType) Number() protoreflect.EnumNumber {
@@ -134,7 +134,7 @@ func (x UpdateEvent_EventType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use UpdateEvent_EventType.Descriptor instead.
 func (UpdateEvent_EventType) EnumDescriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{31, 0}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{31, 0}
 }
 
 type ChatEvent_EventType int32
@@ -182,11 +182,11 @@ func (x ChatEvent_EventType) String() string {
 }
 
 func (ChatEvent_EventType) Descriptor() protoreflect.EnumDescriptor {
-	return file_vassago_proto_enumTypes[2].Descriptor()
+	return file_proto_vassago_proto_enumTypes[2].Descriptor()
 }
 
 func (ChatEvent_EventType) Type() protoreflect.EnumType {
-	return &file_vassago_proto_enumTypes[2]
+	return &file_proto_vassago_proto_enumTypes[2]
 }
 
 func (x ChatEvent_EventType) Number() protoreflect.EnumNumber {
@@ -195,7 +195,7 @@ func (x ChatEvent_EventType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ChatEvent_EventType.Descriptor instead.
 func (ChatEvent_EventType) EnumDescriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{37, 0}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{37, 0}
 }
 
 type MemoryEntry struct {
@@ -217,7 +217,7 @@ type MemoryEntry struct {
 
 func (x *MemoryEntry) Reset() {
 	*x = MemoryEntry{}
-	mi := &file_vassago_proto_msgTypes[0]
+	mi := &file_proto_vassago_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -229,7 +229,7 @@ func (x *MemoryEntry) String() string {
 func (*MemoryEntry) ProtoMessage() {}
 
 func (x *MemoryEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[0]
+	mi := &file_proto_vassago_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -242,7 +242,7 @@ func (x *MemoryEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MemoryEntry.ProtoReflect.Descriptor instead.
 func (*MemoryEntry) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{0}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *MemoryEntry) GetId() string {
@@ -337,7 +337,7 @@ type AddMemoryRequest struct {
 
 func (x *AddMemoryRequest) Reset() {
 	*x = AddMemoryRequest{}
-	mi := &file_vassago_proto_msgTypes[1]
+	mi := &file_proto_vassago_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -349,7 +349,7 @@ func (x *AddMemoryRequest) String() string {
 func (*AddMemoryRequest) ProtoMessage() {}
 
 func (x *AddMemoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[1]
+	mi := &file_proto_vassago_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -362,7 +362,7 @@ func (x *AddMemoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddMemoryRequest.ProtoReflect.Descriptor instead.
 func (*AddMemoryRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{1}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *AddMemoryRequest) GetTarget() string {
@@ -423,7 +423,7 @@ type AddMemoryResponse struct {
 
 func (x *AddMemoryResponse) Reset() {
 	*x = AddMemoryResponse{}
-	mi := &file_vassago_proto_msgTypes[2]
+	mi := &file_proto_vassago_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -435,7 +435,7 @@ func (x *AddMemoryResponse) String() string {
 func (*AddMemoryResponse) ProtoMessage() {}
 
 func (x *AddMemoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[2]
+	mi := &file_proto_vassago_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -448,7 +448,7 @@ func (x *AddMemoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddMemoryResponse.ProtoReflect.Descriptor instead.
 func (*AddMemoryResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{2}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AddMemoryResponse) GetEntry() *MemoryEntry {
@@ -467,7 +467,7 @@ type GetMemoryRequest struct {
 
 func (x *GetMemoryRequest) Reset() {
 	*x = GetMemoryRequest{}
-	mi := &file_vassago_proto_msgTypes[3]
+	mi := &file_proto_vassago_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -479,7 +479,7 @@ func (x *GetMemoryRequest) String() string {
 func (*GetMemoryRequest) ProtoMessage() {}
 
 func (x *GetMemoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[3]
+	mi := &file_proto_vassago_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -492,7 +492,7 @@ func (x *GetMemoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMemoryRequest.ProtoReflect.Descriptor instead.
 func (*GetMemoryRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{3}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetMemoryRequest) GetId() string {
@@ -515,7 +515,7 @@ type UpdateMemoryRequest struct {
 
 func (x *UpdateMemoryRequest) Reset() {
 	*x = UpdateMemoryRequest{}
-	mi := &file_vassago_proto_msgTypes[4]
+	mi := &file_proto_vassago_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -527,7 +527,7 @@ func (x *UpdateMemoryRequest) String() string {
 func (*UpdateMemoryRequest) ProtoMessage() {}
 
 func (x *UpdateMemoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[4]
+	mi := &file_proto_vassago_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -540,7 +540,7 @@ func (x *UpdateMemoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateMemoryRequest.ProtoReflect.Descriptor instead.
 func (*UpdateMemoryRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{4}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateMemoryRequest) GetId() string {
@@ -587,7 +587,7 @@ type RemoveMemoryRequest struct {
 
 func (x *RemoveMemoryRequest) Reset() {
 	*x = RemoveMemoryRequest{}
-	mi := &file_vassago_proto_msgTypes[5]
+	mi := &file_proto_vassago_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -599,7 +599,7 @@ func (x *RemoveMemoryRequest) String() string {
 func (*RemoveMemoryRequest) ProtoMessage() {}
 
 func (x *RemoveMemoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[5]
+	mi := &file_proto_vassago_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -612,7 +612,7 @@ func (x *RemoveMemoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveMemoryRequest.ProtoReflect.Descriptor instead.
 func (*RemoveMemoryRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{5}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *RemoveMemoryRequest) GetId() string {
@@ -631,7 +631,7 @@ type RemoveMemoryResponse struct {
 
 func (x *RemoveMemoryResponse) Reset() {
 	*x = RemoveMemoryResponse{}
-	mi := &file_vassago_proto_msgTypes[6]
+	mi := &file_proto_vassago_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -643,7 +643,7 @@ func (x *RemoveMemoryResponse) String() string {
 func (*RemoveMemoryResponse) ProtoMessage() {}
 
 func (x *RemoveMemoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[6]
+	mi := &file_proto_vassago_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -656,7 +656,7 @@ func (x *RemoveMemoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveMemoryResponse.ProtoReflect.Descriptor instead.
 func (*RemoveMemoryResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{6}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *RemoveMemoryResponse) GetDeleted() bool {
@@ -678,7 +678,7 @@ type ListMemoriesRequest struct {
 
 func (x *ListMemoriesRequest) Reset() {
 	*x = ListMemoriesRequest{}
-	mi := &file_vassago_proto_msgTypes[7]
+	mi := &file_proto_vassago_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -690,7 +690,7 @@ func (x *ListMemoriesRequest) String() string {
 func (*ListMemoriesRequest) ProtoMessage() {}
 
 func (x *ListMemoriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[7]
+	mi := &file_proto_vassago_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -703,7 +703,7 @@ func (x *ListMemoriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMemoriesRequest.ProtoReflect.Descriptor instead.
 func (*ListMemoriesRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{7}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListMemoriesRequest) GetTarget() string {
@@ -743,7 +743,7 @@ type MemoryList struct {
 
 func (x *MemoryList) Reset() {
 	*x = MemoryList{}
-	mi := &file_vassago_proto_msgTypes[8]
+	mi := &file_proto_vassago_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -755,7 +755,7 @@ func (x *MemoryList) String() string {
 func (*MemoryList) ProtoMessage() {}
 
 func (x *MemoryList) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[8]
+	mi := &file_proto_vassago_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -768,7 +768,7 @@ func (x *MemoryList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MemoryList.ProtoReflect.Descriptor instead.
 func (*MemoryList) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{8}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *MemoryList) GetEntries() []*MemoryEntry {
@@ -789,7 +789,7 @@ type SearchRequest struct {
 
 func (x *SearchRequest) Reset() {
 	*x = SearchRequest{}
-	mi := &file_vassago_proto_msgTypes[9]
+	mi := &file_proto_vassago_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -801,7 +801,7 @@ func (x *SearchRequest) String() string {
 func (*SearchRequest) ProtoMessage() {}
 
 func (x *SearchRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[9]
+	mi := &file_proto_vassago_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -814,7 +814,7 @@ func (x *SearchRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchRequest.ProtoReflect.Descriptor instead.
 func (*SearchRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{9}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *SearchRequest) GetQuery() string {
@@ -847,7 +847,7 @@ type SearchResponse struct {
 
 func (x *SearchResponse) Reset() {
 	*x = SearchResponse{}
-	mi := &file_vassago_proto_msgTypes[10]
+	mi := &file_proto_vassago_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -859,7 +859,7 @@ func (x *SearchResponse) String() string {
 func (*SearchResponse) ProtoMessage() {}
 
 func (x *SearchResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[10]
+	mi := &file_proto_vassago_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -872,7 +872,7 @@ func (x *SearchResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchResponse.ProtoReflect.Descriptor instead.
 func (*SearchResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{10}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *SearchResponse) GetEntries() []*MemoryEntry {
@@ -892,7 +892,7 @@ type SearchSessionsRequest struct {
 
 func (x *SearchSessionsRequest) Reset() {
 	*x = SearchSessionsRequest{}
-	mi := &file_vassago_proto_msgTypes[11]
+	mi := &file_proto_vassago_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -904,7 +904,7 @@ func (x *SearchSessionsRequest) String() string {
 func (*SearchSessionsRequest) ProtoMessage() {}
 
 func (x *SearchSessionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[11]
+	mi := &file_proto_vassago_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -917,7 +917,7 @@ func (x *SearchSessionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchSessionsRequest.ProtoReflect.Descriptor instead.
 func (*SearchSessionsRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{11}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *SearchSessionsRequest) GetQuery() string {
@@ -943,7 +943,7 @@ type SearchSessionsResponse struct {
 
 func (x *SearchSessionsResponse) Reset() {
 	*x = SearchSessionsResponse{}
-	mi := &file_vassago_proto_msgTypes[12]
+	mi := &file_proto_vassago_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -955,7 +955,7 @@ func (x *SearchSessionsResponse) String() string {
 func (*SearchSessionsResponse) ProtoMessage() {}
 
 func (x *SearchSessionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[12]
+	mi := &file_proto_vassago_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -968,7 +968,7 @@ func (x *SearchSessionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchSessionsResponse.ProtoReflect.Descriptor instead.
 func (*SearchSessionsResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{12}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *SearchSessionsResponse) GetSessions() []*Session {
@@ -987,7 +987,7 @@ type ListSessionsRequest struct {
 
 func (x *ListSessionsRequest) Reset() {
 	*x = ListSessionsRequest{}
-	mi := &file_vassago_proto_msgTypes[13]
+	mi := &file_proto_vassago_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -999,7 +999,7 @@ func (x *ListSessionsRequest) String() string {
 func (*ListSessionsRequest) ProtoMessage() {}
 
 func (x *ListSessionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[13]
+	mi := &file_proto_vassago_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1012,7 +1012,7 @@ func (x *ListSessionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSessionsRequest.ProtoReflect.Descriptor instead.
 func (*ListSessionsRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{13}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ListSessionsRequest) GetLimit() int32 {
@@ -1031,7 +1031,7 @@ type ListSessionsResponse struct {
 
 func (x *ListSessionsResponse) Reset() {
 	*x = ListSessionsResponse{}
-	mi := &file_vassago_proto_msgTypes[14]
+	mi := &file_proto_vassago_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1043,7 +1043,7 @@ func (x *ListSessionsResponse) String() string {
 func (*ListSessionsResponse) ProtoMessage() {}
 
 func (x *ListSessionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[14]
+	mi := &file_proto_vassago_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1056,7 +1056,7 @@ func (x *ListSessionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSessionsResponse.ProtoReflect.Descriptor instead.
 func (*ListSessionsResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{14}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ListSessionsResponse) GetSessions() []*Session {
@@ -1077,7 +1077,7 @@ type HotBlockConfig struct {
 
 func (x *HotBlockConfig) Reset() {
 	*x = HotBlockConfig{}
-	mi := &file_vassago_proto_msgTypes[15]
+	mi := &file_proto_vassago_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1089,7 +1089,7 @@ func (x *HotBlockConfig) String() string {
 func (*HotBlockConfig) ProtoMessage() {}
 
 func (x *HotBlockConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[15]
+	mi := &file_proto_vassago_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1102,7 +1102,7 @@ func (x *HotBlockConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotBlockConfig.ProtoReflect.Descriptor instead.
 func (*HotBlockConfig) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{15}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *HotBlockConfig) GetBoostCategories() []string {
@@ -1138,7 +1138,7 @@ type HotBlockRequest struct {
 
 func (x *HotBlockRequest) Reset() {
 	*x = HotBlockRequest{}
-	mi := &file_vassago_proto_msgTypes[16]
+	mi := &file_proto_vassago_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1150,7 +1150,7 @@ func (x *HotBlockRequest) String() string {
 func (*HotBlockRequest) ProtoMessage() {}
 
 func (x *HotBlockRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[16]
+	mi := &file_proto_vassago_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1163,7 +1163,7 @@ func (x *HotBlockRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotBlockRequest.ProtoReflect.Descriptor instead.
 func (*HotBlockRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{16}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *HotBlockRequest) GetTarget() string {
@@ -1206,7 +1206,7 @@ type HotBlockResponse struct {
 
 func (x *HotBlockResponse) Reset() {
 	*x = HotBlockResponse{}
-	mi := &file_vassago_proto_msgTypes[17]
+	mi := &file_proto_vassago_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1218,7 +1218,7 @@ func (x *HotBlockResponse) String() string {
 func (*HotBlockResponse) ProtoMessage() {}
 
 func (x *HotBlockResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[17]
+	mi := &file_proto_vassago_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1231,7 +1231,7 @@ func (x *HotBlockResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HotBlockResponse.ProtoReflect.Descriptor instead.
 func (*HotBlockResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{17}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *HotBlockResponse) GetContent() string {
@@ -1278,7 +1278,7 @@ type Session struct {
 
 func (x *Session) Reset() {
 	*x = Session{}
-	mi := &file_vassago_proto_msgTypes[18]
+	mi := &file_proto_vassago_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1290,7 +1290,7 @@ func (x *Session) String() string {
 func (*Session) ProtoMessage() {}
 
 func (x *Session) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[18]
+	mi := &file_proto_vassago_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1303,7 +1303,7 @@ func (x *Session) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Session.ProtoReflect.Descriptor instead.
 func (*Session) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{18}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *Session) GetId() string {
@@ -1375,7 +1375,7 @@ type Message struct {
 
 func (x *Message) Reset() {
 	*x = Message{}
-	mi := &file_vassago_proto_msgTypes[19]
+	mi := &file_proto_vassago_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1387,7 +1387,7 @@ func (x *Message) String() string {
 func (*Message) ProtoMessage() {}
 
 func (x *Message) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[19]
+	mi := &file_proto_vassago_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1400,7 +1400,7 @@ func (x *Message) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Message.ProtoReflect.Descriptor instead.
 func (*Message) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{19}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *Message) GetRole() string {
@@ -1449,7 +1449,7 @@ type CreateSessionRequest struct {
 
 func (x *CreateSessionRequest) Reset() {
 	*x = CreateSessionRequest{}
-	mi := &file_vassago_proto_msgTypes[20]
+	mi := &file_proto_vassago_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1461,7 +1461,7 @@ func (x *CreateSessionRequest) String() string {
 func (*CreateSessionRequest) ProtoMessage() {}
 
 func (x *CreateSessionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[20]
+	mi := &file_proto_vassago_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1474,7 +1474,7 @@ func (x *CreateSessionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSessionRequest.ProtoReflect.Descriptor instead.
 func (*CreateSessionRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{20}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *CreateSessionRequest) GetAgentId() string {
@@ -1508,7 +1508,7 @@ type AddMessagesRequest struct {
 
 func (x *AddMessagesRequest) Reset() {
 	*x = AddMessagesRequest{}
-	mi := &file_vassago_proto_msgTypes[21]
+	mi := &file_proto_vassago_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1520,7 +1520,7 @@ func (x *AddMessagesRequest) String() string {
 func (*AddMessagesRequest) ProtoMessage() {}
 
 func (x *AddMessagesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[21]
+	mi := &file_proto_vassago_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1533,7 +1533,7 @@ func (x *AddMessagesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddMessagesRequest.ProtoReflect.Descriptor instead.
 func (*AddMessagesRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{21}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *AddMessagesRequest) GetSessionId() string {
@@ -1559,7 +1559,7 @@ type EndSessionRequest struct {
 
 func (x *EndSessionRequest) Reset() {
 	*x = EndSessionRequest{}
-	mi := &file_vassago_proto_msgTypes[22]
+	mi := &file_proto_vassago_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1571,7 +1571,7 @@ func (x *EndSessionRequest) String() string {
 func (*EndSessionRequest) ProtoMessage() {}
 
 func (x *EndSessionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[22]
+	mi := &file_proto_vassago_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1584,7 +1584,7 @@ func (x *EndSessionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EndSessionRequest.ProtoReflect.Descriptor instead.
 func (*EndSessionRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{22}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *EndSessionRequest) GetSessionId() string {
@@ -1603,7 +1603,7 @@ type EndSessionResponse struct {
 
 func (x *EndSessionResponse) Reset() {
 	*x = EndSessionResponse{}
-	mi := &file_vassago_proto_msgTypes[23]
+	mi := &file_proto_vassago_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1615,7 +1615,7 @@ func (x *EndSessionResponse) String() string {
 func (*EndSessionResponse) ProtoMessage() {}
 
 func (x *EndSessionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[23]
+	mi := &file_proto_vassago_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1628,7 +1628,7 @@ func (x *EndSessionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EndSessionResponse.ProtoReflect.Descriptor instead.
 func (*EndSessionResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{23}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *EndSessionResponse) GetEnded() bool {
@@ -1648,7 +1648,7 @@ type GetSessionRequest struct {
 
 func (x *GetSessionRequest) Reset() {
 	*x = GetSessionRequest{}
-	mi := &file_vassago_proto_msgTypes[24]
+	mi := &file_proto_vassago_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1660,7 +1660,7 @@ func (x *GetSessionRequest) String() string {
 func (*GetSessionRequest) ProtoMessage() {}
 
 func (x *GetSessionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[24]
+	mi := &file_proto_vassago_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1673,7 +1673,7 @@ func (x *GetSessionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSessionRequest.ProtoReflect.Descriptor instead.
 func (*GetSessionRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{24}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *GetSessionRequest) GetSessionId() string {
@@ -1701,7 +1701,7 @@ type ConsolidateRequest struct {
 
 func (x *ConsolidateRequest) Reset() {
 	*x = ConsolidateRequest{}
-	mi := &file_vassago_proto_msgTypes[25]
+	mi := &file_proto_vassago_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1713,7 +1713,7 @@ func (x *ConsolidateRequest) String() string {
 func (*ConsolidateRequest) ProtoMessage() {}
 
 func (x *ConsolidateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[25]
+	mi := &file_proto_vassago_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1726,7 +1726,7 @@ func (x *ConsolidateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConsolidateRequest.ProtoReflect.Descriptor instead.
 func (*ConsolidateRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{25}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *ConsolidateRequest) GetScope() ConsolidateScope {
@@ -1761,7 +1761,7 @@ type ConsolidateResponse struct {
 
 func (x *ConsolidateResponse) Reset() {
 	*x = ConsolidateResponse{}
-	mi := &file_vassago_proto_msgTypes[26]
+	mi := &file_proto_vassago_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1773,7 +1773,7 @@ func (x *ConsolidateResponse) String() string {
 func (*ConsolidateResponse) ProtoMessage() {}
 
 func (x *ConsolidateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[26]
+	mi := &file_proto_vassago_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1786,7 +1786,7 @@ func (x *ConsolidateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConsolidateResponse.ProtoReflect.Descriptor instead.
 func (*ConsolidateResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{26}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ConsolidateResponse) GetRemoved() int32 {
@@ -1821,7 +1821,7 @@ type GetConsolidationCandidatesRequest struct {
 
 func (x *GetConsolidationCandidatesRequest) Reset() {
 	*x = GetConsolidationCandidatesRequest{}
-	mi := &file_vassago_proto_msgTypes[27]
+	mi := &file_proto_vassago_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1833,7 +1833,7 @@ func (x *GetConsolidationCandidatesRequest) String() string {
 func (*GetConsolidationCandidatesRequest) ProtoMessage() {}
 
 func (x *GetConsolidationCandidatesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[27]
+	mi := &file_proto_vassago_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1846,7 +1846,7 @@ func (x *GetConsolidationCandidatesRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetConsolidationCandidatesRequest.ProtoReflect.Descriptor instead.
 func (*GetConsolidationCandidatesRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{27}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *GetConsolidationCandidatesRequest) GetScope() ConsolidateScope {
@@ -1880,7 +1880,7 @@ type ConsolidationCandidate struct {
 
 func (x *ConsolidationCandidate) Reset() {
 	*x = ConsolidationCandidate{}
-	mi := &file_vassago_proto_msgTypes[28]
+	mi := &file_proto_vassago_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1892,7 +1892,7 @@ func (x *ConsolidationCandidate) String() string {
 func (*ConsolidationCandidate) ProtoMessage() {}
 
 func (x *ConsolidationCandidate) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[28]
+	mi := &file_proto_vassago_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1905,7 +1905,7 @@ func (x *ConsolidationCandidate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConsolidationCandidate.ProtoReflect.Descriptor instead.
 func (*ConsolidationCandidate) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{28}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *ConsolidationCandidate) GetEntry() *MemoryEntry {
@@ -1931,7 +1931,7 @@ type ConsolidationCandidatesResponse struct {
 
 func (x *ConsolidationCandidatesResponse) Reset() {
 	*x = ConsolidationCandidatesResponse{}
-	mi := &file_vassago_proto_msgTypes[29]
+	mi := &file_proto_vassago_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1943,7 +1943,7 @@ func (x *ConsolidationCandidatesResponse) String() string {
 func (*ConsolidationCandidatesResponse) ProtoMessage() {}
 
 func (x *ConsolidationCandidatesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[29]
+	mi := &file_proto_vassago_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1956,7 +1956,7 @@ func (x *ConsolidationCandidatesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConsolidationCandidatesResponse.ProtoReflect.Descriptor instead.
 func (*ConsolidationCandidatesResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{29}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *ConsolidationCandidatesResponse) GetCandidates() []*ConsolidationCandidate {
@@ -1978,7 +1978,7 @@ type SubscribeRequest struct {
 
 func (x *SubscribeRequest) Reset() {
 	*x = SubscribeRequest{}
-	mi := &file_vassago_proto_msgTypes[30]
+	mi := &file_proto_vassago_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1990,7 +1990,7 @@ func (x *SubscribeRequest) String() string {
 func (*SubscribeRequest) ProtoMessage() {}
 
 func (x *SubscribeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[30]
+	mi := &file_proto_vassago_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2003,7 +2003,7 @@ func (x *SubscribeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubscribeRequest.ProtoReflect.Descriptor instead.
 func (*SubscribeRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{30}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *SubscribeRequest) GetAgentId() string {
@@ -2050,7 +2050,7 @@ type UpdateEvent struct {
 
 func (x *UpdateEvent) Reset() {
 	*x = UpdateEvent{}
-	mi := &file_vassago_proto_msgTypes[31]
+	mi := &file_proto_vassago_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2062,7 +2062,7 @@ func (x *UpdateEvent) String() string {
 func (*UpdateEvent) ProtoMessage() {}
 
 func (x *UpdateEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[31]
+	mi := &file_proto_vassago_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2075,7 +2075,7 @@ func (x *UpdateEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateEvent.ProtoReflect.Descriptor instead.
 func (*UpdateEvent) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{31}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *UpdateEvent) GetEventType() UpdateEvent_EventType {
@@ -2152,7 +2152,7 @@ type CronFireEvent struct {
 
 func (x *CronFireEvent) Reset() {
 	*x = CronFireEvent{}
-	mi := &file_vassago_proto_msgTypes[32]
+	mi := &file_proto_vassago_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2164,7 +2164,7 @@ func (x *CronFireEvent) String() string {
 func (*CronFireEvent) ProtoMessage() {}
 
 func (x *CronFireEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[32]
+	mi := &file_proto_vassago_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2177,7 +2177,7 @@ func (x *CronFireEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CronFireEvent.ProtoReflect.Descriptor instead.
 func (*CronFireEvent) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{32}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *CronFireEvent) GetJobId() string {
@@ -2240,7 +2240,7 @@ type RegisterAgentRequest struct {
 
 func (x *RegisterAgentRequest) Reset() {
 	*x = RegisterAgentRequest{}
-	mi := &file_vassago_proto_msgTypes[33]
+	mi := &file_proto_vassago_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2252,7 +2252,7 @@ func (x *RegisterAgentRequest) String() string {
 func (*RegisterAgentRequest) ProtoMessage() {}
 
 func (x *RegisterAgentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[33]
+	mi := &file_proto_vassago_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2265,7 +2265,7 @@ func (x *RegisterAgentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterAgentRequest.ProtoReflect.Descriptor instead.
 func (*RegisterAgentRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{33}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *RegisterAgentRequest) GetAgentId() string {
@@ -2299,7 +2299,7 @@ type RegisterAgentResponse struct {
 
 func (x *RegisterAgentResponse) Reset() {
 	*x = RegisterAgentResponse{}
-	mi := &file_vassago_proto_msgTypes[34]
+	mi := &file_proto_vassago_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2311,7 +2311,7 @@ func (x *RegisterAgentResponse) String() string {
 func (*RegisterAgentResponse) ProtoMessage() {}
 
 func (x *RegisterAgentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[34]
+	mi := &file_proto_vassago_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2324,7 +2324,7 @@ func (x *RegisterAgentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterAgentResponse.ProtoReflect.Descriptor instead.
 func (*RegisterAgentResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{34}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *RegisterAgentResponse) GetAgentId() string {
@@ -2350,7 +2350,7 @@ type AgentId struct {
 
 func (x *AgentId) Reset() {
 	*x = AgentId{}
-	mi := &file_vassago_proto_msgTypes[35]
+	mi := &file_proto_vassago_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2362,7 +2362,7 @@ func (x *AgentId) String() string {
 func (*AgentId) ProtoMessage() {}
 
 func (x *AgentId) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[35]
+	mi := &file_proto_vassago_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2375,7 +2375,7 @@ func (x *AgentId) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AgentId.ProtoReflect.Descriptor instead.
 func (*AgentId) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{35}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *AgentId) GetAgentId() string {
@@ -2397,7 +2397,7 @@ type ChatRequest struct {
 
 func (x *ChatRequest) Reset() {
 	*x = ChatRequest{}
-	mi := &file_vassago_proto_msgTypes[36]
+	mi := &file_proto_vassago_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2409,7 +2409,7 @@ func (x *ChatRequest) String() string {
 func (*ChatRequest) ProtoMessage() {}
 
 func (x *ChatRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[36]
+	mi := &file_proto_vassago_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2422,7 +2422,7 @@ func (x *ChatRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChatRequest.ProtoReflect.Descriptor instead.
 func (*ChatRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{36}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *ChatRequest) GetSessionId() string {
@@ -2461,7 +2461,7 @@ type ChatEvent struct {
 
 func (x *ChatEvent) Reset() {
 	*x = ChatEvent{}
-	mi := &file_vassago_proto_msgTypes[37]
+	mi := &file_proto_vassago_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2473,7 +2473,7 @@ func (x *ChatEvent) String() string {
 func (*ChatEvent) ProtoMessage() {}
 
 func (x *ChatEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[37]
+	mi := &file_proto_vassago_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2486,7 +2486,7 @@ func (x *ChatEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChatEvent.ProtoReflect.Descriptor instead.
 func (*ChatEvent) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{37}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *ChatEvent) GetEventType() ChatEvent_EventType {
@@ -2547,7 +2547,7 @@ type HealthCheckRequest struct {
 
 func (x *HealthCheckRequest) Reset() {
 	*x = HealthCheckRequest{}
-	mi := &file_vassago_proto_msgTypes[38]
+	mi := &file_proto_vassago_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2559,7 +2559,7 @@ func (x *HealthCheckRequest) String() string {
 func (*HealthCheckRequest) ProtoMessage() {}
 
 func (x *HealthCheckRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[38]
+	mi := &file_proto_vassago_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2572,7 +2572,7 @@ func (x *HealthCheckRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HealthCheckRequest.ProtoReflect.Descriptor instead.
 func (*HealthCheckRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{38}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{38}
 }
 
 type HealthCheckResponse struct {
@@ -2586,7 +2586,7 @@ type HealthCheckResponse struct {
 
 func (x *HealthCheckResponse) Reset() {
 	*x = HealthCheckResponse{}
-	mi := &file_vassago_proto_msgTypes[39]
+	mi := &file_proto_vassago_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2598,7 +2598,7 @@ func (x *HealthCheckResponse) String() string {
 func (*HealthCheckResponse) ProtoMessage() {}
 
 func (x *HealthCheckResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[39]
+	mi := &file_proto_vassago_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2611,7 +2611,7 @@ func (x *HealthCheckResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HealthCheckResponse.ProtoReflect.Descriptor instead.
 func (*HealthCheckResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{39}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *HealthCheckResponse) GetStatus() string {
@@ -2643,7 +2643,7 @@ type Empty struct {
 
 func (x *Empty) Reset() {
 	*x = Empty{}
-	mi := &file_vassago_proto_msgTypes[40]
+	mi := &file_proto_vassago_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2655,7 +2655,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[40]
+	mi := &file_proto_vassago_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2668,7 +2668,7 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{40}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{40}
 }
 
 type TodoItem struct {
@@ -2687,7 +2687,7 @@ type TodoItem struct {
 
 func (x *TodoItem) Reset() {
 	*x = TodoItem{}
-	mi := &file_vassago_proto_msgTypes[41]
+	mi := &file_proto_vassago_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2699,7 +2699,7 @@ func (x *TodoItem) String() string {
 func (*TodoItem) ProtoMessage() {}
 
 func (x *TodoItem) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[41]
+	mi := &file_proto_vassago_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2712,7 +2712,7 @@ func (x *TodoItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TodoItem.ProtoReflect.Descriptor instead.
 func (*TodoItem) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{41}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *TodoItem) GetId() string {
@@ -2782,7 +2782,7 @@ type AddTodoRequest struct {
 
 func (x *AddTodoRequest) Reset() {
 	*x = AddTodoRequest{}
-	mi := &file_vassago_proto_msgTypes[42]
+	mi := &file_proto_vassago_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2794,7 +2794,7 @@ func (x *AddTodoRequest) String() string {
 func (*AddTodoRequest) ProtoMessage() {}
 
 func (x *AddTodoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[42]
+	mi := &file_proto_vassago_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2807,7 +2807,7 @@ func (x *AddTodoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddTodoRequest.ProtoReflect.Descriptor instead.
 func (*AddTodoRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{42}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *AddTodoRequest) GetContent() string {
@@ -2841,7 +2841,7 @@ type ListTodosRequest struct {
 
 func (x *ListTodosRequest) Reset() {
 	*x = ListTodosRequest{}
-	mi := &file_vassago_proto_msgTypes[43]
+	mi := &file_proto_vassago_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2853,7 +2853,7 @@ func (x *ListTodosRequest) String() string {
 func (*ListTodosRequest) ProtoMessage() {}
 
 func (x *ListTodosRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[43]
+	mi := &file_proto_vassago_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2866,7 +2866,7 @@ func (x *ListTodosRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTodosRequest.ProtoReflect.Descriptor instead.
 func (*ListTodosRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{43}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *ListTodosRequest) GetIncludeCompleted() bool {
@@ -2892,7 +2892,7 @@ type CompleteTodoRequest struct {
 
 func (x *CompleteTodoRequest) Reset() {
 	*x = CompleteTodoRequest{}
-	mi := &file_vassago_proto_msgTypes[44]
+	mi := &file_proto_vassago_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2904,7 +2904,7 @@ func (x *CompleteTodoRequest) String() string {
 func (*CompleteTodoRequest) ProtoMessage() {}
 
 func (x *CompleteTodoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[44]
+	mi := &file_proto_vassago_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2917,7 +2917,7 @@ func (x *CompleteTodoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompleteTodoRequest.ProtoReflect.Descriptor instead.
 func (*CompleteTodoRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{44}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *CompleteTodoRequest) GetId() string {
@@ -2936,7 +2936,7 @@ type RemoveTodoRequest struct {
 
 func (x *RemoveTodoRequest) Reset() {
 	*x = RemoveTodoRequest{}
-	mi := &file_vassago_proto_msgTypes[45]
+	mi := &file_proto_vassago_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2948,7 +2948,7 @@ func (x *RemoveTodoRequest) String() string {
 func (*RemoveTodoRequest) ProtoMessage() {}
 
 func (x *RemoveTodoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[45]
+	mi := &file_proto_vassago_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2961,7 +2961,7 @@ func (x *RemoveTodoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveTodoRequest.ProtoReflect.Descriptor instead.
 func (*RemoveTodoRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{45}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *RemoveTodoRequest) GetId() string {
@@ -2989,7 +2989,7 @@ type CronJob struct {
 
 func (x *CronJob) Reset() {
 	*x = CronJob{}
-	mi := &file_vassago_proto_msgTypes[46]
+	mi := &file_proto_vassago_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3001,7 +3001,7 @@ func (x *CronJob) String() string {
 func (*CronJob) ProtoMessage() {}
 
 func (x *CronJob) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[46]
+	mi := &file_proto_vassago_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3014,7 +3014,7 @@ func (x *CronJob) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CronJob.ProtoReflect.Descriptor instead.
 func (*CronJob) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{46}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *CronJob) GetId() string {
@@ -3100,7 +3100,7 @@ type CreateCronJobRequest struct {
 
 func (x *CreateCronJobRequest) Reset() {
 	*x = CreateCronJobRequest{}
-	mi := &file_vassago_proto_msgTypes[47]
+	mi := &file_proto_vassago_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3112,7 +3112,7 @@ func (x *CreateCronJobRequest) String() string {
 func (*CreateCronJobRequest) ProtoMessage() {}
 
 func (x *CreateCronJobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[47]
+	mi := &file_proto_vassago_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3125,7 +3125,7 @@ func (x *CreateCronJobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCronJobRequest.ProtoReflect.Descriptor instead.
 func (*CreateCronJobRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{47}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *CreateCronJobRequest) GetName() string {
@@ -3173,7 +3173,7 @@ type ListCronJobsRequest struct {
 
 func (x *ListCronJobsRequest) Reset() {
 	*x = ListCronJobsRequest{}
-	mi := &file_vassago_proto_msgTypes[48]
+	mi := &file_proto_vassago_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3185,7 +3185,7 @@ func (x *ListCronJobsRequest) String() string {
 func (*ListCronJobsRequest) ProtoMessage() {}
 
 func (x *ListCronJobsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[48]
+	mi := &file_proto_vassago_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3198,7 +3198,7 @@ func (x *ListCronJobsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListCronJobsRequest.ProtoReflect.Descriptor instead.
 func (*ListCronJobsRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{48}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *ListCronJobsRequest) GetAgentId() string {
@@ -3224,7 +3224,7 @@ type CronJobList struct {
 
 func (x *CronJobList) Reset() {
 	*x = CronJobList{}
-	mi := &file_vassago_proto_msgTypes[49]
+	mi := &file_proto_vassago_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3236,7 +3236,7 @@ func (x *CronJobList) String() string {
 func (*CronJobList) ProtoMessage() {}
 
 func (x *CronJobList) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[49]
+	mi := &file_proto_vassago_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3249,7 +3249,7 @@ func (x *CronJobList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CronJobList.ProtoReflect.Descriptor instead.
 func (*CronJobList) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{49}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *CronJobList) GetJobs() []*CronJob {
@@ -3272,7 +3272,7 @@ type UpdateCronJobRequest struct {
 
 func (x *UpdateCronJobRequest) Reset() {
 	*x = UpdateCronJobRequest{}
-	mi := &file_vassago_proto_msgTypes[50]
+	mi := &file_proto_vassago_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3284,7 +3284,7 @@ func (x *UpdateCronJobRequest) String() string {
 func (*UpdateCronJobRequest) ProtoMessage() {}
 
 func (x *UpdateCronJobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[50]
+	mi := &file_proto_vassago_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3297,7 +3297,7 @@ func (x *UpdateCronJobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCronJobRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCronJobRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{50}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{50}
 }
 
 func (x *UpdateCronJobRequest) GetId() string {
@@ -3344,7 +3344,7 @@ type DeleteCronJobRequest struct {
 
 func (x *DeleteCronJobRequest) Reset() {
 	*x = DeleteCronJobRequest{}
-	mi := &file_vassago_proto_msgTypes[51]
+	mi := &file_proto_vassago_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3356,7 +3356,7 @@ func (x *DeleteCronJobRequest) String() string {
 func (*DeleteCronJobRequest) ProtoMessage() {}
 
 func (x *DeleteCronJobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[51]
+	mi := &file_proto_vassago_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3369,7 +3369,7 @@ func (x *DeleteCronJobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteCronJobRequest.ProtoReflect.Descriptor instead.
 func (*DeleteCronJobRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{51}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *DeleteCronJobRequest) GetId() string {
@@ -3397,7 +3397,7 @@ type SkillEntry struct {
 
 func (x *SkillEntry) Reset() {
 	*x = SkillEntry{}
-	mi := &file_vassago_proto_msgTypes[52]
+	mi := &file_proto_vassago_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3409,7 +3409,7 @@ func (x *SkillEntry) String() string {
 func (*SkillEntry) ProtoMessage() {}
 
 func (x *SkillEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[52]
+	mi := &file_proto_vassago_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3422,7 +3422,7 @@ func (x *SkillEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SkillEntry.ProtoReflect.Descriptor instead.
 func (*SkillEntry) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{52}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{52}
 }
 
 func (x *SkillEntry) GetId() string {
@@ -3510,7 +3510,7 @@ type AddSkillRequest struct {
 
 func (x *AddSkillRequest) Reset() {
 	*x = AddSkillRequest{}
-	mi := &file_vassago_proto_msgTypes[53]
+	mi := &file_proto_vassago_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3522,7 +3522,7 @@ func (x *AddSkillRequest) String() string {
 func (*AddSkillRequest) ProtoMessage() {}
 
 func (x *AddSkillRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[53]
+	mi := &file_proto_vassago_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3535,7 +3535,7 @@ func (x *AddSkillRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddSkillRequest.ProtoReflect.Descriptor instead.
 func (*AddSkillRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{53}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *AddSkillRequest) GetName() string {
@@ -3596,7 +3596,7 @@ type GetSkillRequest struct {
 
 func (x *GetSkillRequest) Reset() {
 	*x = GetSkillRequest{}
-	mi := &file_vassago_proto_msgTypes[54]
+	mi := &file_proto_vassago_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3608,7 +3608,7 @@ func (x *GetSkillRequest) String() string {
 func (*GetSkillRequest) ProtoMessage() {}
 
 func (x *GetSkillRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[54]
+	mi := &file_proto_vassago_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3621,7 +3621,7 @@ func (x *GetSkillRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSkillRequest.ProtoReflect.Descriptor instead.
 func (*GetSkillRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{54}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *GetSkillRequest) GetId() string {
@@ -3642,7 +3642,7 @@ type ListSkillsRequest struct {
 
 func (x *ListSkillsRequest) Reset() {
 	*x = ListSkillsRequest{}
-	mi := &file_vassago_proto_msgTypes[55]
+	mi := &file_proto_vassago_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3654,7 +3654,7 @@ func (x *ListSkillsRequest) String() string {
 func (*ListSkillsRequest) ProtoMessage() {}
 
 func (x *ListSkillsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[55]
+	mi := &file_proto_vassago_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3667,7 +3667,7 @@ func (x *ListSkillsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSkillsRequest.ProtoReflect.Descriptor instead.
 func (*ListSkillsRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{55}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *ListSkillsRequest) GetCategory() string {
@@ -3700,7 +3700,7 @@ type SkillList struct {
 
 func (x *SkillList) Reset() {
 	*x = SkillList{}
-	mi := &file_vassago_proto_msgTypes[56]
+	mi := &file_proto_vassago_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3712,7 +3712,7 @@ func (x *SkillList) String() string {
 func (*SkillList) ProtoMessage() {}
 
 func (x *SkillList) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[56]
+	mi := &file_proto_vassago_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3725,7 +3725,7 @@ func (x *SkillList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SkillList.ProtoReflect.Descriptor instead.
 func (*SkillList) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{56}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *SkillList) GetSkills() []*SkillEntry {
@@ -3744,7 +3744,7 @@ type RemoveSkillRequest struct {
 
 func (x *RemoveSkillRequest) Reset() {
 	*x = RemoveSkillRequest{}
-	mi := &file_vassago_proto_msgTypes[57]
+	mi := &file_proto_vassago_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3756,7 +3756,7 @@ func (x *RemoveSkillRequest) String() string {
 func (*RemoveSkillRequest) ProtoMessage() {}
 
 func (x *RemoveSkillRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[57]
+	mi := &file_proto_vassago_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3769,7 +3769,7 @@ func (x *RemoveSkillRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveSkillRequest.ProtoReflect.Descriptor instead.
 func (*RemoveSkillRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{57}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *RemoveSkillRequest) GetId() string {
@@ -3788,7 +3788,7 @@ type RemoveSkillResponse struct {
 
 func (x *RemoveSkillResponse) Reset() {
 	*x = RemoveSkillResponse{}
-	mi := &file_vassago_proto_msgTypes[58]
+	mi := &file_proto_vassago_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3800,7 +3800,7 @@ func (x *RemoveSkillResponse) String() string {
 func (*RemoveSkillResponse) ProtoMessage() {}
 
 func (x *RemoveSkillResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[58]
+	mi := &file_proto_vassago_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3813,7 +3813,7 @@ func (x *RemoveSkillResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveSkillResponse.ProtoReflect.Descriptor instead.
 func (*RemoveSkillResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{58}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *RemoveSkillResponse) GetSuccess() bool {
@@ -3834,7 +3834,7 @@ type SearchSkillsRequest struct {
 
 func (x *SearchSkillsRequest) Reset() {
 	*x = SearchSkillsRequest{}
-	mi := &file_vassago_proto_msgTypes[59]
+	mi := &file_proto_vassago_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3846,7 +3846,7 @@ func (x *SearchSkillsRequest) String() string {
 func (*SearchSkillsRequest) ProtoMessage() {}
 
 func (x *SearchSkillsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[59]
+	mi := &file_proto_vassago_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3859,7 +3859,7 @@ func (x *SearchSkillsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchSkillsRequest.ProtoReflect.Descriptor instead.
 func (*SearchSkillsRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{59}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *SearchSkillsRequest) GetQuery() string {
@@ -3905,7 +3905,7 @@ type SavedToolEntry struct {
 
 func (x *SavedToolEntry) Reset() {
 	*x = SavedToolEntry{}
-	mi := &file_vassago_proto_msgTypes[60]
+	mi := &file_proto_vassago_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3917,7 +3917,7 @@ func (x *SavedToolEntry) String() string {
 func (*SavedToolEntry) ProtoMessage() {}
 
 func (x *SavedToolEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[60]
+	mi := &file_proto_vassago_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3930,7 +3930,7 @@ func (x *SavedToolEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SavedToolEntry.ProtoReflect.Descriptor instead.
 func (*SavedToolEntry) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{60}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *SavedToolEntry) GetId() string {
@@ -4048,7 +4048,7 @@ type AddSavedToolRequest struct {
 
 func (x *AddSavedToolRequest) Reset() {
 	*x = AddSavedToolRequest{}
-	mi := &file_vassago_proto_msgTypes[61]
+	mi := &file_proto_vassago_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4060,7 +4060,7 @@ func (x *AddSavedToolRequest) String() string {
 func (*AddSavedToolRequest) ProtoMessage() {}
 
 func (x *AddSavedToolRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[61]
+	mi := &file_proto_vassago_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4073,7 +4073,7 @@ func (x *AddSavedToolRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddSavedToolRequest.ProtoReflect.Descriptor instead.
 func (*AddSavedToolRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{61}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{61}
 }
 
 func (x *AddSavedToolRequest) GetName() string {
@@ -4148,7 +4148,7 @@ type GetSavedToolRequest struct {
 
 func (x *GetSavedToolRequest) Reset() {
 	*x = GetSavedToolRequest{}
-	mi := &file_vassago_proto_msgTypes[62]
+	mi := &file_proto_vassago_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4160,7 +4160,7 @@ func (x *GetSavedToolRequest) String() string {
 func (*GetSavedToolRequest) ProtoMessage() {}
 
 func (x *GetSavedToolRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[62]
+	mi := &file_proto_vassago_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4173,7 +4173,7 @@ func (x *GetSavedToolRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSavedToolRequest.ProtoReflect.Descriptor instead.
 func (*GetSavedToolRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{62}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *GetSavedToolRequest) GetId() string {
@@ -4194,7 +4194,7 @@ type ListSavedToolsRequest struct {
 
 func (x *ListSavedToolsRequest) Reset() {
 	*x = ListSavedToolsRequest{}
-	mi := &file_vassago_proto_msgTypes[63]
+	mi := &file_proto_vassago_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4206,7 +4206,7 @@ func (x *ListSavedToolsRequest) String() string {
 func (*ListSavedToolsRequest) ProtoMessage() {}
 
 func (x *ListSavedToolsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[63]
+	mi := &file_proto_vassago_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4219,7 +4219,7 @@ func (x *ListSavedToolsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSavedToolsRequest.ProtoReflect.Descriptor instead.
 func (*ListSavedToolsRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{63}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{63}
 }
 
 func (x *ListSavedToolsRequest) GetCategory() string {
@@ -4252,7 +4252,7 @@ type SavedToolList struct {
 
 func (x *SavedToolList) Reset() {
 	*x = SavedToolList{}
-	mi := &file_vassago_proto_msgTypes[64]
+	mi := &file_proto_vassago_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4264,7 +4264,7 @@ func (x *SavedToolList) String() string {
 func (*SavedToolList) ProtoMessage() {}
 
 func (x *SavedToolList) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[64]
+	mi := &file_proto_vassago_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4277,7 +4277,7 @@ func (x *SavedToolList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SavedToolList.ProtoReflect.Descriptor instead.
 func (*SavedToolList) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{64}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{64}
 }
 
 func (x *SavedToolList) GetTools() []*SavedToolEntry {
@@ -4298,7 +4298,7 @@ type SearchSavedToolsRequest struct {
 
 func (x *SearchSavedToolsRequest) Reset() {
 	*x = SearchSavedToolsRequest{}
-	mi := &file_vassago_proto_msgTypes[65]
+	mi := &file_proto_vassago_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4310,7 +4310,7 @@ func (x *SearchSavedToolsRequest) String() string {
 func (*SearchSavedToolsRequest) ProtoMessage() {}
 
 func (x *SearchSavedToolsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[65]
+	mi := &file_proto_vassago_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4323,7 +4323,7 @@ func (x *SearchSavedToolsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchSavedToolsRequest.ProtoReflect.Descriptor instead.
 func (*SearchSavedToolsRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{65}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{65}
 }
 
 func (x *SearchSavedToolsRequest) GetQuery() string {
@@ -4364,7 +4364,7 @@ type UpdateSavedToolRequest struct {
 
 func (x *UpdateSavedToolRequest) Reset() {
 	*x = UpdateSavedToolRequest{}
-	mi := &file_vassago_proto_msgTypes[66]
+	mi := &file_proto_vassago_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4376,7 +4376,7 @@ func (x *UpdateSavedToolRequest) String() string {
 func (*UpdateSavedToolRequest) ProtoMessage() {}
 
 func (x *UpdateSavedToolRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[66]
+	mi := &file_proto_vassago_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4389,7 +4389,7 @@ func (x *UpdateSavedToolRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSavedToolRequest.ProtoReflect.Descriptor instead.
 func (*UpdateSavedToolRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{66}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{66}
 }
 
 func (x *UpdateSavedToolRequest) GetId() string {
@@ -4464,7 +4464,7 @@ type RemoveSavedToolRequest struct {
 
 func (x *RemoveSavedToolRequest) Reset() {
 	*x = RemoveSavedToolRequest{}
-	mi := &file_vassago_proto_msgTypes[67]
+	mi := &file_proto_vassago_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4476,7 +4476,7 @@ func (x *RemoveSavedToolRequest) String() string {
 func (*RemoveSavedToolRequest) ProtoMessage() {}
 
 func (x *RemoveSavedToolRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[67]
+	mi := &file_proto_vassago_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4489,7 +4489,7 @@ func (x *RemoveSavedToolRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveSavedToolRequest.ProtoReflect.Descriptor instead.
 func (*RemoveSavedToolRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{67}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{67}
 }
 
 func (x *RemoveSavedToolRequest) GetId() string {
@@ -4508,7 +4508,7 @@ type RemoveSavedToolResponse struct {
 
 func (x *RemoveSavedToolResponse) Reset() {
 	*x = RemoveSavedToolResponse{}
-	mi := &file_vassago_proto_msgTypes[68]
+	mi := &file_proto_vassago_proto_msgTypes[68]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4520,7 +4520,7 @@ func (x *RemoveSavedToolResponse) String() string {
 func (*RemoveSavedToolResponse) ProtoMessage() {}
 
 func (x *RemoveSavedToolResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[68]
+	mi := &file_proto_vassago_proto_msgTypes[68]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4533,7 +4533,7 @@ func (x *RemoveSavedToolResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveSavedToolResponse.ProtoReflect.Descriptor instead.
 func (*RemoveSavedToolResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{68}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{68}
 }
 
 func (x *RemoveSavedToolResponse) GetRemoved() bool {
@@ -4554,7 +4554,7 @@ type SyncChangesRequest struct {
 
 func (x *SyncChangesRequest) Reset() {
 	*x = SyncChangesRequest{}
-	mi := &file_vassago_proto_msgTypes[69]
+	mi := &file_proto_vassago_proto_msgTypes[69]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4566,7 +4566,7 @@ func (x *SyncChangesRequest) String() string {
 func (*SyncChangesRequest) ProtoMessage() {}
 
 func (x *SyncChangesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[69]
+	mi := &file_proto_vassago_proto_msgTypes[69]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4579,7 +4579,7 @@ func (x *SyncChangesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SyncChangesRequest.ProtoReflect.Descriptor instead.
 func (*SyncChangesRequest) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{69}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{69}
 }
 
 func (x *SyncChangesRequest) GetPeerId() string {
@@ -4613,7 +4613,7 @@ type SyncChangesResponse struct {
 
 func (x *SyncChangesResponse) Reset() {
 	*x = SyncChangesResponse{}
-	mi := &file_vassago_proto_msgTypes[70]
+	mi := &file_proto_vassago_proto_msgTypes[70]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4625,7 +4625,7 @@ func (x *SyncChangesResponse) String() string {
 func (*SyncChangesResponse) ProtoMessage() {}
 
 func (x *SyncChangesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_vassago_proto_msgTypes[70]
+	mi := &file_proto_vassago_proto_msgTypes[70]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4638,7 +4638,7 @@ func (x *SyncChangesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SyncChangesResponse.ProtoReflect.Descriptor instead.
 func (*SyncChangesResponse) Descriptor() ([]byte, []int) {
-	return file_vassago_proto_rawDescGZIP(), []int{70}
+	return file_proto_vassago_proto_rawDescGZIP(), []int{70}
 }
 
 func (x *SyncChangesResponse) GetEntries() []*MemoryEntry {
@@ -4655,11 +4655,775 @@ func (x *SyncChangesResponse) GetServerTime() int64 {
 	return 0
 }
 
-var File_vassago_proto protoreflect.FileDescriptor
+type TaskEntry struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ParentIds     string                 `protobuf:"bytes,2,opt,name=parent_ids,json=parentIds,proto3" json:"parent_ids,omitempty"` // JSON array of parent task IDs
+	Status        string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`                        // ready, claimed, done, failed, dead_letter
+	AgentType     string                 `protobuf:"bytes,4,opt,name=agent_type,json=agentType,proto3" json:"agent_type,omitempty"`
+	AssignedAgent string                 `protobuf:"bytes,5,opt,name=assigned_agent,json=assignedAgent,proto3" json:"assigned_agent,omitempty"`
+	Goal          string                 `protobuf:"bytes,6,opt,name=goal,proto3" json:"goal,omitempty"`
+	Context       string                 `protobuf:"bytes,7,opt,name=context,proto3" json:"context,omitempty"` // JSON: repo_path, tool config, etc.
+	ResultKey     string                 `protobuf:"bytes,8,opt,name=result_key,json=resultKey,proto3" json:"result_key,omitempty"`
+	Priority      int32                  `protobuf:"varint,9,opt,name=priority,proto3" json:"priority,omitempty"`
+	CreatedAt     int64                  `protobuf:"varint,10,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	ClaimedAt     int64                  `protobuf:"varint,11,opt,name=claimed_at,json=claimedAt,proto3" json:"claimed_at,omitempty"`
+	CompletedAt   int64                  `protobuf:"varint,12,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
+	TtlSeconds    int32                  `protobuf:"varint,13,opt,name=ttl_seconds,json=ttlSeconds,proto3" json:"ttl_seconds,omitempty"`
+	RetryCount    int32                  `protobuf:"varint,14,opt,name=retry_count,json=retryCount,proto3" json:"retry_count,omitempty"`
+	MaxRetries    int32                  `protobuf:"varint,15,opt,name=max_retries,json=maxRetries,proto3" json:"max_retries,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
 
-const file_vassago_proto_rawDesc = "" +
+func (x *TaskEntry) Reset() {
+	*x = TaskEntry{}
+	mi := &file_proto_vassago_proto_msgTypes[71]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskEntry) ProtoMessage() {}
+
+func (x *TaskEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[71]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskEntry.ProtoReflect.Descriptor instead.
+func (*TaskEntry) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *TaskEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *TaskEntry) GetParentIds() string {
+	if x != nil {
+		return x.ParentIds
+	}
+	return ""
+}
+
+func (x *TaskEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *TaskEntry) GetAgentType() string {
+	if x != nil {
+		return x.AgentType
+	}
+	return ""
+}
+
+func (x *TaskEntry) GetAssignedAgent() string {
+	if x != nil {
+		return x.AssignedAgent
+	}
+	return ""
+}
+
+func (x *TaskEntry) GetGoal() string {
+	if x != nil {
+		return x.Goal
+	}
+	return ""
+}
+
+func (x *TaskEntry) GetContext() string {
+	if x != nil {
+		return x.Context
+	}
+	return ""
+}
+
+func (x *TaskEntry) GetResultKey() string {
+	if x != nil {
+		return x.ResultKey
+	}
+	return ""
+}
+
+func (x *TaskEntry) GetPriority() int32 {
+	if x != nil {
+		return x.Priority
+	}
+	return 0
+}
+
+func (x *TaskEntry) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+func (x *TaskEntry) GetClaimedAt() int64 {
+	if x != nil {
+		return x.ClaimedAt
+	}
+	return 0
+}
+
+func (x *TaskEntry) GetCompletedAt() int64 {
+	if x != nil {
+		return x.CompletedAt
+	}
+	return 0
+}
+
+func (x *TaskEntry) GetTtlSeconds() int32 {
+	if x != nil {
+		return x.TtlSeconds
+	}
+	return 0
+}
+
+func (x *TaskEntry) GetRetryCount() int32 {
+	if x != nil {
+		return x.RetryCount
+	}
+	return 0
+}
+
+func (x *TaskEntry) GetMaxRetries() int32 {
+	if x != nil {
+		return x.MaxRetries
+	}
+	return 0
+}
+
+type AddTaskRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	AgentType     string                 `protobuf:"bytes,2,opt,name=agent_type,json=agentType,proto3" json:"agent_type,omitempty"`
+	Goal          string                 `protobuf:"bytes,3,opt,name=goal,proto3" json:"goal,omitempty"`
+	Context       string                 `protobuf:"bytes,4,opt,name=context,proto3" json:"context,omitempty"`                          // JSON, default "{}"
+	Priority      int32                  `protobuf:"varint,5,opt,name=priority,proto3" json:"priority,omitempty"`                       // default 3
+	TtlSeconds    int32                  `protobuf:"varint,6,opt,name=ttl_seconds,json=ttlSeconds,proto3" json:"ttl_seconds,omitempty"` // default 300
+	MaxRetries    int32                  `protobuf:"varint,7,opt,name=max_retries,json=maxRetries,proto3" json:"max_retries,omitempty"` // default 2
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddTaskRequest) Reset() {
+	*x = AddTaskRequest{}
+	mi := &file_proto_vassago_proto_msgTypes[72]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddTaskRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddTaskRequest) ProtoMessage() {}
+
+func (x *AddTaskRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[72]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddTaskRequest.ProtoReflect.Descriptor instead.
+func (*AddTaskRequest) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *AddTaskRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AddTaskRequest) GetAgentType() string {
+	if x != nil {
+		return x.AgentType
+	}
+	return ""
+}
+
+func (x *AddTaskRequest) GetGoal() string {
+	if x != nil {
+		return x.Goal
+	}
+	return ""
+}
+
+func (x *AddTaskRequest) GetContext() string {
+	if x != nil {
+		return x.Context
+	}
+	return ""
+}
+
+func (x *AddTaskRequest) GetPriority() int32 {
+	if x != nil {
+		return x.Priority
+	}
+	return 0
+}
+
+func (x *AddTaskRequest) GetTtlSeconds() int32 {
+	if x != nil {
+		return x.TtlSeconds
+	}
+	return 0
+}
+
+func (x *AddTaskRequest) GetMaxRetries() int32 {
+	if x != nil {
+		return x.MaxRetries
+	}
+	return 0
+}
+
+type GetTaskRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTaskRequest) Reset() {
+	*x = GetTaskRequest{}
+	mi := &file_proto_vassago_proto_msgTypes[73]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTaskRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTaskRequest) ProtoMessage() {}
+
+func (x *GetTaskRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[73]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTaskRequest.ProtoReflect.Descriptor instead.
+func (*GetTaskRequest) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *GetTaskRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type ClaimTaskRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TaskId        string                 `protobuf:"bytes,1,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
+	AgentId       string                 `protobuf:"bytes,2,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ClaimTaskRequest) Reset() {
+	*x = ClaimTaskRequest{}
+	mi := &file_proto_vassago_proto_msgTypes[74]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ClaimTaskRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClaimTaskRequest) ProtoMessage() {}
+
+func (x *ClaimTaskRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[74]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClaimTaskRequest.ProtoReflect.Descriptor instead.
+func (*ClaimTaskRequest) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *ClaimTaskRequest) GetTaskId() string {
+	if x != nil {
+		return x.TaskId
+	}
+	return ""
+}
+
+func (x *ClaimTaskRequest) GetAgentId() string {
+	if x != nil {
+		return x.AgentId
+	}
+	return ""
+}
+
+type CompleteTaskRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TaskId        string                 `protobuf:"bytes,1,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
+	ResultKey     string                 `protobuf:"bytes,2,opt,name=result_key,json=resultKey,proto3" json:"result_key,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CompleteTaskRequest) Reset() {
+	*x = CompleteTaskRequest{}
+	mi := &file_proto_vassago_proto_msgTypes[75]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompleteTaskRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompleteTaskRequest) ProtoMessage() {}
+
+func (x *CompleteTaskRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[75]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompleteTaskRequest.ProtoReflect.Descriptor instead.
+func (*CompleteTaskRequest) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *CompleteTaskRequest) GetTaskId() string {
+	if x != nil {
+		return x.TaskId
+	}
+	return ""
+}
+
+func (x *CompleteTaskRequest) GetResultKey() string {
+	if x != nil {
+		return x.ResultKey
+	}
+	return ""
+}
+
+type FailTaskRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TaskId        string                 `protobuf:"bytes,1,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FailTaskRequest) Reset() {
+	*x = FailTaskRequest{}
+	mi := &file_proto_vassago_proto_msgTypes[76]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FailTaskRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FailTaskRequest) ProtoMessage() {}
+
+func (x *FailTaskRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[76]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FailTaskRequest.ProtoReflect.Descriptor instead.
+func (*FailTaskRequest) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *FailTaskRequest) GetTaskId() string {
+	if x != nil {
+		return x.TaskId
+	}
+	return ""
+}
+
+type FindReadyTasksRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AgentType     string                 `protobuf:"bytes,1,opt,name=agent_type,json=agentType,proto3" json:"agent_type,omitempty"` // empty = all agent types
+	Limit         int32                  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`                         // default 20
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FindReadyTasksRequest) Reset() {
+	*x = FindReadyTasksRequest{}
+	mi := &file_proto_vassago_proto_msgTypes[77]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FindReadyTasksRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FindReadyTasksRequest) ProtoMessage() {}
+
+func (x *FindReadyTasksRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[77]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FindReadyTasksRequest.ProtoReflect.Descriptor instead.
+func (*FindReadyTasksRequest) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{77}
+}
+
+func (x *FindReadyTasksRequest) GetAgentType() string {
+	if x != nil {
+		return x.AgentType
+	}
+	return ""
+}
+
+func (x *FindReadyTasksRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type ListTasksByStatusRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"` // empty = all statuses
+	Limit         int32                  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`  // default 50
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListTasksByStatusRequest) Reset() {
+	*x = ListTasksByStatusRequest{}
+	mi := &file_proto_vassago_proto_msgTypes[78]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListTasksByStatusRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListTasksByStatusRequest) ProtoMessage() {}
+
+func (x *ListTasksByStatusRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[78]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListTasksByStatusRequest.ProtoReflect.Descriptor instead.
+func (*ListTasksByStatusRequest) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{78}
+}
+
+func (x *ListTasksByStatusRequest) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ListTasksByStatusRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type TaskList struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Tasks         []*TaskEntry           `protobuf:"bytes,1,rep,name=tasks,proto3" json:"tasks,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TaskList) Reset() {
+	*x = TaskList{}
+	mi := &file_proto_vassago_proto_msgTypes[79]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskList) ProtoMessage() {}
+
+func (x *TaskList) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[79]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskList.ProtoReflect.Descriptor instead.
+func (*TaskList) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *TaskList) GetTasks() []*TaskEntry {
+	if x != nil {
+		return x.Tasks
+	}
+	return nil
+}
+
+type ResetTimedOutTasksRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResetTimedOutTasksRequest) Reset() {
+	*x = ResetTimedOutTasksRequest{}
+	mi := &file_proto_vassago_proto_msgTypes[80]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResetTimedOutTasksRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResetTimedOutTasksRequest) ProtoMessage() {}
+
+func (x *ResetTimedOutTasksRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[80]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResetTimedOutTasksRequest.ProtoReflect.Descriptor instead.
+func (*ResetTimedOutTasksRequest) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{80}
+}
+
+type ResetTimedOutTasksResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ResetIds      []string               `protobuf:"bytes,1,rep,name=reset_ids,json=resetIds,proto3" json:"reset_ids,omitempty"`
+	Count         int32                  `protobuf:"varint,2,opt,name=count,proto3" json:"count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResetTimedOutTasksResponse) Reset() {
+	*x = ResetTimedOutTasksResponse{}
+	mi := &file_proto_vassago_proto_msgTypes[81]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResetTimedOutTasksResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResetTimedOutTasksResponse) ProtoMessage() {}
+
+func (x *ResetTimedOutTasksResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[81]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResetTimedOutTasksResponse.ProtoReflect.Descriptor instead.
+func (*ResetTimedOutTasksResponse) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{81}
+}
+
+func (x *ResetTimedOutTasksResponse) GetResetIds() []string {
+	if x != nil {
+		return x.ResetIds
+	}
+	return nil
+}
+
+func (x *ResetTimedOutTasksResponse) GetCount() int32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+type DeleteTaskRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteTaskRequest) Reset() {
+	*x = DeleteTaskRequest{}
+	mi := &file_proto_vassago_proto_msgTypes[82]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteTaskRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteTaskRequest) ProtoMessage() {}
+
+func (x *DeleteTaskRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[82]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteTaskRequest.ProtoReflect.Descriptor instead.
+func (*DeleteTaskRequest) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *DeleteTaskRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type DeleteTaskResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Deleted       bool                   `protobuf:"varint,1,opt,name=deleted,proto3" json:"deleted,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteTaskResponse) Reset() {
+	*x = DeleteTaskResponse{}
+	mi := &file_proto_vassago_proto_msgTypes[83]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteTaskResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteTaskResponse) ProtoMessage() {}
+
+func (x *DeleteTaskResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_vassago_proto_msgTypes[83]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteTaskResponse.ProtoReflect.Descriptor instead.
+func (*DeleteTaskResponse) Descriptor() ([]byte, []int) {
+	return file_proto_vassago_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *DeleteTaskResponse) GetDeleted() bool {
+	if x != nil {
+		return x.Deleted
+	}
+	return false
+}
+
+var File_proto_vassago_proto protoreflect.FileDescriptor
+
+const file_proto_vassago_proto_rawDesc = "" +
 	"\n" +
-	"\rvassago.proto\x12\avassago\"\xba\x02\n" +
+	"\x13proto/vassago.proto\x12\avassago\"\xba\x02\n" +
 	"\vMemoryEntry\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06target\x18\x02 \x01(\tR\x06target\x12\x1a\n" +
@@ -5073,13 +5837,77 @@ const file_vassago_proto_rawDesc = "" +
 	"\x13SyncChangesResponse\x12.\n" +
 	"\aentries\x18\x01 \x03(\v2\x14.vassago.MemoryEntryR\aentries\x12\x1f\n" +
 	"\vserver_time\x18\x02 \x01(\x03R\n" +
-	"serverTime*\xb3\x01\n" +
+	"serverTime\"\xc5\x03\n" +
+	"\tTaskEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"parent_ids\x18\x02 \x01(\tR\tparentIds\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12\x1d\n" +
+	"\n" +
+	"agent_type\x18\x04 \x01(\tR\tagentType\x12%\n" +
+	"\x0eassigned_agent\x18\x05 \x01(\tR\rassignedAgent\x12\x12\n" +
+	"\x04goal\x18\x06 \x01(\tR\x04goal\x12\x18\n" +
+	"\acontext\x18\a \x01(\tR\acontext\x12\x1d\n" +
+	"\n" +
+	"result_key\x18\b \x01(\tR\tresultKey\x12\x1a\n" +
+	"\bpriority\x18\t \x01(\x05R\bpriority\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\n" +
+	" \x01(\x03R\tcreatedAt\x12\x1d\n" +
+	"\n" +
+	"claimed_at\x18\v \x01(\x03R\tclaimedAt\x12!\n" +
+	"\fcompleted_at\x18\f \x01(\x03R\vcompletedAt\x12\x1f\n" +
+	"\vttl_seconds\x18\r \x01(\x05R\n" +
+	"ttlSeconds\x12\x1f\n" +
+	"\vretry_count\x18\x0e \x01(\x05R\n" +
+	"retryCount\x12\x1f\n" +
+	"\vmax_retries\x18\x0f \x01(\x05R\n" +
+	"maxRetries\"\xcb\x01\n" +
+	"\x0eAddTaskRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"agent_type\x18\x02 \x01(\tR\tagentType\x12\x12\n" +
+	"\x04goal\x18\x03 \x01(\tR\x04goal\x12\x18\n" +
+	"\acontext\x18\x04 \x01(\tR\acontext\x12\x1a\n" +
+	"\bpriority\x18\x05 \x01(\x05R\bpriority\x12\x1f\n" +
+	"\vttl_seconds\x18\x06 \x01(\x05R\n" +
+	"ttlSeconds\x12\x1f\n" +
+	"\vmax_retries\x18\a \x01(\x05R\n" +
+	"maxRetries\" \n" +
+	"\x0eGetTaskRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"F\n" +
+	"\x10ClaimTaskRequest\x12\x17\n" +
+	"\atask_id\x18\x01 \x01(\tR\x06taskId\x12\x19\n" +
+	"\bagent_id\x18\x02 \x01(\tR\aagentId\"M\n" +
+	"\x13CompleteTaskRequest\x12\x17\n" +
+	"\atask_id\x18\x01 \x01(\tR\x06taskId\x12\x1d\n" +
+	"\n" +
+	"result_key\x18\x02 \x01(\tR\tresultKey\"*\n" +
+	"\x0fFailTaskRequest\x12\x17\n" +
+	"\atask_id\x18\x01 \x01(\tR\x06taskId\"L\n" +
+	"\x15FindReadyTasksRequest\x12\x1d\n" +
+	"\n" +
+	"agent_type\x18\x01 \x01(\tR\tagentType\x12\x14\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\"H\n" +
+	"\x18ListTasksByStatusRequest\x12\x16\n" +
+	"\x06status\x18\x01 \x01(\tR\x06status\x12\x14\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\"4\n" +
+	"\bTaskList\x12(\n" +
+	"\x05tasks\x18\x01 \x03(\v2\x12.vassago.TaskEntryR\x05tasks\"\x1b\n" +
+	"\x19ResetTimedOutTasksRequest\"O\n" +
+	"\x1aResetTimedOutTasksResponse\x12\x1b\n" +
+	"\treset_ids\x18\x01 \x03(\tR\bresetIds\x12\x14\n" +
+	"\x05count\x18\x02 \x01(\x05R\x05count\"#\n" +
+	"\x11DeleteTaskRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\".\n" +
+	"\x12DeleteTaskResponse\x12\x18\n" +
+	"\adeleted\x18\x01 \x01(\bR\adeleted*\xb3\x01\n" +
 	"\x10ConsolidateScope\x12!\n" +
 	"\x1dCONSOLIDATE_SCOPE_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15CONSOLIDATE_SCOPE_ALL\x10\x01\x12\"\n" +
 	"\x1eCONSOLIDATE_SCOPE_OBSERVATIONS\x10\x02\x12\x1e\n" +
 	"\x1aCONSOLIDATE_SCOPE_CATEGORY\x10\x03\x12\x1d\n" +
-	"\x19CONSOLIDATE_SCOPE_EXPIRED\x10\x042\xbd\x13\n" +
+	"\x19CONSOLIDATE_SCOPE_EXPIRED\x10\x042\x9b\x18\n" +
 	"\aVassago\x12A\n" +
 	"\x04Ping\x12\x1b.vassago.HealthCheckRequest\x1a\x1c.vassago.HealthCheckResponse\x12B\n" +
 	"\tAddMemory\x12\x19.vassago.AddMemoryRequest\x1a\x1a.vassago.AddMemoryResponse\x12<\n" +
@@ -5121,7 +5949,17 @@ const file_vassago_proto_rawDesc = "" +
 	"\x10SearchSavedTools\x12 .vassago.SearchSavedToolsRequest\x1a\x16.vassago.SavedToolList\x12K\n" +
 	"\x0fUpdateSavedTool\x12\x1f.vassago.UpdateSavedToolRequest\x1a\x17.vassago.SavedToolEntry\x12T\n" +
 	"\x0fRemoveSavedTool\x12\x1f.vassago.RemoveSavedToolRequest\x1a .vassago.RemoveSavedToolResponse\x12H\n" +
-	"\vSyncChanges\x12\x1b.vassago.SyncChangesRequest\x1a\x1c.vassago.SyncChangesResponse2\x88\x01\n" +
+	"\vSyncChanges\x12\x1b.vassago.SyncChangesRequest\x1a\x1c.vassago.SyncChangesResponse\x126\n" +
+	"\aAddTask\x12\x17.vassago.AddTaskRequest\x1a\x12.vassago.TaskEntry\x126\n" +
+	"\aGetTask\x12\x17.vassago.GetTaskRequest\x1a\x12.vassago.TaskEntry\x12:\n" +
+	"\tClaimTask\x12\x19.vassago.ClaimTaskRequest\x1a\x12.vassago.TaskEntry\x12@\n" +
+	"\fCompleteTask\x12\x1c.vassago.CompleteTaskRequest\x1a\x12.vassago.TaskEntry\x128\n" +
+	"\bFailTask\x12\x18.vassago.FailTaskRequest\x1a\x12.vassago.TaskEntry\x12C\n" +
+	"\x0eFindReadyTasks\x12\x1e.vassago.FindReadyTasksRequest\x1a\x11.vassago.TaskList\x12I\n" +
+	"\x11ListTasksByStatus\x12!.vassago.ListTasksByStatusRequest\x1a\x11.vassago.TaskList\x12]\n" +
+	"\x12ResetTimedOutTasks\x12\".vassago.ResetTimedOutTasksRequest\x1a#.vassago.ResetTimedOutTasksResponse\x12E\n" +
+	"\n" +
+	"DeleteTask\x12\x1a.vassago.DeleteTaskRequest\x1a\x1b.vassago.DeleteTaskResponse2\x88\x01\n" +
 	"\tAgentChat\x128\n" +
 	"\n" +
 	"ChatStream\x12\x14.vassago.ChatRequest\x1a\x12.vassago.ChatEvent0\x01\x12A\n" +
@@ -5133,20 +5971,20 @@ const file_vassago_proto_rawDesc = "" +
 	"\rDeleteCronJob\x12\x1d.vassago.DeleteCronJobRequest\x1a\x0e.vassago.EmptyB$Z\"github.com/aj-nt/vassago-sdk/protob\x06proto3"
 
 var (
-	file_vassago_proto_rawDescOnce sync.Once
-	file_vassago_proto_rawDescData []byte
+	file_proto_vassago_proto_rawDescOnce sync.Once
+	file_proto_vassago_proto_rawDescData []byte
 )
 
-func file_vassago_proto_rawDescGZIP() []byte {
-	file_vassago_proto_rawDescOnce.Do(func() {
-		file_vassago_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_vassago_proto_rawDesc), len(file_vassago_proto_rawDesc)))
+func file_proto_vassago_proto_rawDescGZIP() []byte {
+	file_proto_vassago_proto_rawDescOnce.Do(func() {
+		file_proto_vassago_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_vassago_proto_rawDesc), len(file_proto_vassago_proto_rawDesc)))
 	})
-	return file_vassago_proto_rawDescData
+	return file_proto_vassago_proto_rawDescData
 }
 
-var file_vassago_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_vassago_proto_msgTypes = make([]protoimpl.MessageInfo, 71)
-var file_vassago_proto_goTypes = []any{
+var file_proto_vassago_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_proto_vassago_proto_msgTypes = make([]protoimpl.MessageInfo, 84)
+var file_proto_vassago_proto_goTypes = []any{
 	(ConsolidateScope)(0),                     // 0: vassago.ConsolidateScope
 	(UpdateEvent_EventType)(0),                // 1: vassago.UpdateEvent.EventType
 	(ChatEvent_EventType)(0),                  // 2: vassago.ChatEvent.EventType
@@ -5221,8 +6059,21 @@ var file_vassago_proto_goTypes = []any{
 	(*RemoveSavedToolResponse)(nil),           // 71: vassago.RemoveSavedToolResponse
 	(*SyncChangesRequest)(nil),                // 72: vassago.SyncChangesRequest
 	(*SyncChangesResponse)(nil),               // 73: vassago.SyncChangesResponse
+	(*TaskEntry)(nil),                         // 74: vassago.TaskEntry
+	(*AddTaskRequest)(nil),                    // 75: vassago.AddTaskRequest
+	(*GetTaskRequest)(nil),                    // 76: vassago.GetTaskRequest
+	(*ClaimTaskRequest)(nil),                  // 77: vassago.ClaimTaskRequest
+	(*CompleteTaskRequest)(nil),               // 78: vassago.CompleteTaskRequest
+	(*FailTaskRequest)(nil),                   // 79: vassago.FailTaskRequest
+	(*FindReadyTasksRequest)(nil),             // 80: vassago.FindReadyTasksRequest
+	(*ListTasksByStatusRequest)(nil),          // 81: vassago.ListTasksByStatusRequest
+	(*TaskList)(nil),                          // 82: vassago.TaskList
+	(*ResetTimedOutTasksRequest)(nil),         // 83: vassago.ResetTimedOutTasksRequest
+	(*ResetTimedOutTasksResponse)(nil),        // 84: vassago.ResetTimedOutTasksResponse
+	(*DeleteTaskRequest)(nil),                 // 85: vassago.DeleteTaskRequest
+	(*DeleteTaskResponse)(nil),                // 86: vassago.DeleteTaskResponse
 }
-var file_vassago_proto_depIdxs = []int32{
+var file_proto_vassago_proto_depIdxs = []int32{
 	3,  // 0: vassago.AddMemoryResponse.entry:type_name -> vassago.MemoryEntry
 	3,  // 1: vassago.MemoryList.entries:type_name -> vassago.MemoryEntry
 	3,  // 2: vassago.SearchResponse.entries:type_name -> vassago.MemoryEntry
@@ -5244,136 +6095,155 @@ var file_vassago_proto_depIdxs = []int32{
 	55, // 18: vassago.SkillList.skills:type_name -> vassago.SkillEntry
 	63, // 19: vassago.SavedToolList.tools:type_name -> vassago.SavedToolEntry
 	3,  // 20: vassago.SyncChangesResponse.entries:type_name -> vassago.MemoryEntry
-	41, // 21: vassago.Vassago.Ping:input_type -> vassago.HealthCheckRequest
-	4,  // 22: vassago.Vassago.AddMemory:input_type -> vassago.AddMemoryRequest
-	6,  // 23: vassago.Vassago.GetMemory:input_type -> vassago.GetMemoryRequest
-	7,  // 24: vassago.Vassago.UpdateMemory:input_type -> vassago.UpdateMemoryRequest
-	8,  // 25: vassago.Vassago.RemoveMemory:input_type -> vassago.RemoveMemoryRequest
-	10, // 26: vassago.Vassago.ListMemories:input_type -> vassago.ListMemoriesRequest
-	12, // 27: vassago.Vassago.Search:input_type -> vassago.SearchRequest
-	14, // 28: vassago.Vassago.SearchSessions:input_type -> vassago.SearchSessionsRequest
-	16, // 29: vassago.Vassago.ListSessions:input_type -> vassago.ListSessionsRequest
-	19, // 30: vassago.Vassago.GetHotBlock:input_type -> vassago.HotBlockRequest
-	23, // 31: vassago.Vassago.CreateSession:input_type -> vassago.CreateSessionRequest
-	24, // 32: vassago.Vassago.AddMessages:input_type -> vassago.AddMessagesRequest
-	25, // 33: vassago.Vassago.EndSession:input_type -> vassago.EndSessionRequest
-	27, // 34: vassago.Vassago.GetSession:input_type -> vassago.GetSessionRequest
-	28, // 35: vassago.Vassago.Consolidate:input_type -> vassago.ConsolidateRequest
-	30, // 36: vassago.Vassago.GetConsolidationCandidates:input_type -> vassago.GetConsolidationCandidatesRequest
-	33, // 37: vassago.Vassago.Subscribe:input_type -> vassago.SubscribeRequest
-	36, // 38: vassago.Vassago.RegisterAgent:input_type -> vassago.RegisterAgentRequest
-	38, // 39: vassago.Vassago.Heartbeat:input_type -> vassago.AgentId
-	39, // 40: vassago.Vassago.ChatStream:input_type -> vassago.ChatRequest
-	45, // 41: vassago.Vassago.AddTodo:input_type -> vassago.AddTodoRequest
-	46, // 42: vassago.Vassago.ListTodos:input_type -> vassago.ListTodosRequest
-	47, // 43: vassago.Vassago.CompleteTodo:input_type -> vassago.CompleteTodoRequest
-	48, // 44: vassago.Vassago.RemoveTodo:input_type -> vassago.RemoveTodoRequest
-	56, // 45: vassago.Vassago.AddSkill:input_type -> vassago.AddSkillRequest
-	57, // 46: vassago.Vassago.GetSkill:input_type -> vassago.GetSkillRequest
-	58, // 47: vassago.Vassago.ListSkills:input_type -> vassago.ListSkillsRequest
-	60, // 48: vassago.Vassago.RemoveSkill:input_type -> vassago.RemoveSkillRequest
-	62, // 49: vassago.Vassago.SearchSkills:input_type -> vassago.SearchSkillsRequest
-	64, // 50: vassago.Vassago.AddSavedTool:input_type -> vassago.AddSavedToolRequest
-	65, // 51: vassago.Vassago.GetSavedTool:input_type -> vassago.GetSavedToolRequest
-	66, // 52: vassago.Vassago.ListSavedTools:input_type -> vassago.ListSavedToolsRequest
-	68, // 53: vassago.Vassago.SearchSavedTools:input_type -> vassago.SearchSavedToolsRequest
-	69, // 54: vassago.Vassago.UpdateSavedTool:input_type -> vassago.UpdateSavedToolRequest
-	70, // 55: vassago.Vassago.RemoveSavedTool:input_type -> vassago.RemoveSavedToolRequest
-	72, // 56: vassago.Vassago.SyncChanges:input_type -> vassago.SyncChangesRequest
-	39, // 57: vassago.AgentChat.ChatStream:input_type -> vassago.ChatRequest
-	41, // 58: vassago.AgentChat.Ping:input_type -> vassago.HealthCheckRequest
-	50, // 59: vassago.CronService.CreateCronJob:input_type -> vassago.CreateCronJobRequest
-	51, // 60: vassago.CronService.ListCronJobs:input_type -> vassago.ListCronJobsRequest
-	53, // 61: vassago.CronService.UpdateCronJob:input_type -> vassago.UpdateCronJobRequest
-	54, // 62: vassago.CronService.DeleteCronJob:input_type -> vassago.DeleteCronJobRequest
-	42, // 63: vassago.Vassago.Ping:output_type -> vassago.HealthCheckResponse
-	5,  // 64: vassago.Vassago.AddMemory:output_type -> vassago.AddMemoryResponse
-	3,  // 65: vassago.Vassago.GetMemory:output_type -> vassago.MemoryEntry
-	3,  // 66: vassago.Vassago.UpdateMemory:output_type -> vassago.MemoryEntry
-	9,  // 67: vassago.Vassago.RemoveMemory:output_type -> vassago.RemoveMemoryResponse
-	11, // 68: vassago.Vassago.ListMemories:output_type -> vassago.MemoryList
-	13, // 69: vassago.Vassago.Search:output_type -> vassago.SearchResponse
-	15, // 70: vassago.Vassago.SearchSessions:output_type -> vassago.SearchSessionsResponse
-	17, // 71: vassago.Vassago.ListSessions:output_type -> vassago.ListSessionsResponse
-	20, // 72: vassago.Vassago.GetHotBlock:output_type -> vassago.HotBlockResponse
-	21, // 73: vassago.Vassago.CreateSession:output_type -> vassago.Session
-	21, // 74: vassago.Vassago.AddMessages:output_type -> vassago.Session
-	26, // 75: vassago.Vassago.EndSession:output_type -> vassago.EndSessionResponse
-	21, // 76: vassago.Vassago.GetSession:output_type -> vassago.Session
-	29, // 77: vassago.Vassago.Consolidate:output_type -> vassago.ConsolidateResponse
-	32, // 78: vassago.Vassago.GetConsolidationCandidates:output_type -> vassago.ConsolidationCandidatesResponse
-	34, // 79: vassago.Vassago.Subscribe:output_type -> vassago.UpdateEvent
-	37, // 80: vassago.Vassago.RegisterAgent:output_type -> vassago.RegisterAgentResponse
-	43, // 81: vassago.Vassago.Heartbeat:output_type -> vassago.Empty
-	40, // 82: vassago.Vassago.ChatStream:output_type -> vassago.ChatEvent
-	44, // 83: vassago.Vassago.AddTodo:output_type -> vassago.TodoItem
-	44, // 84: vassago.Vassago.ListTodos:output_type -> vassago.TodoItem
-	44, // 85: vassago.Vassago.CompleteTodo:output_type -> vassago.TodoItem
-	43, // 86: vassago.Vassago.RemoveTodo:output_type -> vassago.Empty
-	55, // 87: vassago.Vassago.AddSkill:output_type -> vassago.SkillEntry
-	55, // 88: vassago.Vassago.GetSkill:output_type -> vassago.SkillEntry
-	59, // 89: vassago.Vassago.ListSkills:output_type -> vassago.SkillList
-	61, // 90: vassago.Vassago.RemoveSkill:output_type -> vassago.RemoveSkillResponse
-	59, // 91: vassago.Vassago.SearchSkills:output_type -> vassago.SkillList
-	63, // 92: vassago.Vassago.AddSavedTool:output_type -> vassago.SavedToolEntry
-	63, // 93: vassago.Vassago.GetSavedTool:output_type -> vassago.SavedToolEntry
-	67, // 94: vassago.Vassago.ListSavedTools:output_type -> vassago.SavedToolList
-	67, // 95: vassago.Vassago.SearchSavedTools:output_type -> vassago.SavedToolList
-	63, // 96: vassago.Vassago.UpdateSavedTool:output_type -> vassago.SavedToolEntry
-	71, // 97: vassago.Vassago.RemoveSavedTool:output_type -> vassago.RemoveSavedToolResponse
-	73, // 98: vassago.Vassago.SyncChanges:output_type -> vassago.SyncChangesResponse
-	40, // 99: vassago.AgentChat.ChatStream:output_type -> vassago.ChatEvent
-	42, // 100: vassago.AgentChat.Ping:output_type -> vassago.HealthCheckResponse
-	49, // 101: vassago.CronService.CreateCronJob:output_type -> vassago.CronJob
-	52, // 102: vassago.CronService.ListCronJobs:output_type -> vassago.CronJobList
-	49, // 103: vassago.CronService.UpdateCronJob:output_type -> vassago.CronJob
-	43, // 104: vassago.CronService.DeleteCronJob:output_type -> vassago.Empty
-	63, // [63:105] is the sub-list for method output_type
-	21, // [21:63] is the sub-list for method input_type
-	21, // [21:21] is the sub-list for extension type_name
-	21, // [21:21] is the sub-list for extension extendee
-	0,  // [0:21] is the sub-list for field type_name
+	74, // 21: vassago.TaskList.tasks:type_name -> vassago.TaskEntry
+	41, // 22: vassago.Vassago.Ping:input_type -> vassago.HealthCheckRequest
+	4,  // 23: vassago.Vassago.AddMemory:input_type -> vassago.AddMemoryRequest
+	6,  // 24: vassago.Vassago.GetMemory:input_type -> vassago.GetMemoryRequest
+	7,  // 25: vassago.Vassago.UpdateMemory:input_type -> vassago.UpdateMemoryRequest
+	8,  // 26: vassago.Vassago.RemoveMemory:input_type -> vassago.RemoveMemoryRequest
+	10, // 27: vassago.Vassago.ListMemories:input_type -> vassago.ListMemoriesRequest
+	12, // 28: vassago.Vassago.Search:input_type -> vassago.SearchRequest
+	14, // 29: vassago.Vassago.SearchSessions:input_type -> vassago.SearchSessionsRequest
+	16, // 30: vassago.Vassago.ListSessions:input_type -> vassago.ListSessionsRequest
+	19, // 31: vassago.Vassago.GetHotBlock:input_type -> vassago.HotBlockRequest
+	23, // 32: vassago.Vassago.CreateSession:input_type -> vassago.CreateSessionRequest
+	24, // 33: vassago.Vassago.AddMessages:input_type -> vassago.AddMessagesRequest
+	25, // 34: vassago.Vassago.EndSession:input_type -> vassago.EndSessionRequest
+	27, // 35: vassago.Vassago.GetSession:input_type -> vassago.GetSessionRequest
+	28, // 36: vassago.Vassago.Consolidate:input_type -> vassago.ConsolidateRequest
+	30, // 37: vassago.Vassago.GetConsolidationCandidates:input_type -> vassago.GetConsolidationCandidatesRequest
+	33, // 38: vassago.Vassago.Subscribe:input_type -> vassago.SubscribeRequest
+	36, // 39: vassago.Vassago.RegisterAgent:input_type -> vassago.RegisterAgentRequest
+	38, // 40: vassago.Vassago.Heartbeat:input_type -> vassago.AgentId
+	39, // 41: vassago.Vassago.ChatStream:input_type -> vassago.ChatRequest
+	45, // 42: vassago.Vassago.AddTodo:input_type -> vassago.AddTodoRequest
+	46, // 43: vassago.Vassago.ListTodos:input_type -> vassago.ListTodosRequest
+	47, // 44: vassago.Vassago.CompleteTodo:input_type -> vassago.CompleteTodoRequest
+	48, // 45: vassago.Vassago.RemoveTodo:input_type -> vassago.RemoveTodoRequest
+	56, // 46: vassago.Vassago.AddSkill:input_type -> vassago.AddSkillRequest
+	57, // 47: vassago.Vassago.GetSkill:input_type -> vassago.GetSkillRequest
+	58, // 48: vassago.Vassago.ListSkills:input_type -> vassago.ListSkillsRequest
+	60, // 49: vassago.Vassago.RemoveSkill:input_type -> vassago.RemoveSkillRequest
+	62, // 50: vassago.Vassago.SearchSkills:input_type -> vassago.SearchSkillsRequest
+	64, // 51: vassago.Vassago.AddSavedTool:input_type -> vassago.AddSavedToolRequest
+	65, // 52: vassago.Vassago.GetSavedTool:input_type -> vassago.GetSavedToolRequest
+	66, // 53: vassago.Vassago.ListSavedTools:input_type -> vassago.ListSavedToolsRequest
+	68, // 54: vassago.Vassago.SearchSavedTools:input_type -> vassago.SearchSavedToolsRequest
+	69, // 55: vassago.Vassago.UpdateSavedTool:input_type -> vassago.UpdateSavedToolRequest
+	70, // 56: vassago.Vassago.RemoveSavedTool:input_type -> vassago.RemoveSavedToolRequest
+	72, // 57: vassago.Vassago.SyncChanges:input_type -> vassago.SyncChangesRequest
+	75, // 58: vassago.Vassago.AddTask:input_type -> vassago.AddTaskRequest
+	76, // 59: vassago.Vassago.GetTask:input_type -> vassago.GetTaskRequest
+	77, // 60: vassago.Vassago.ClaimTask:input_type -> vassago.ClaimTaskRequest
+	78, // 61: vassago.Vassago.CompleteTask:input_type -> vassago.CompleteTaskRequest
+	79, // 62: vassago.Vassago.FailTask:input_type -> vassago.FailTaskRequest
+	80, // 63: vassago.Vassago.FindReadyTasks:input_type -> vassago.FindReadyTasksRequest
+	81, // 64: vassago.Vassago.ListTasksByStatus:input_type -> vassago.ListTasksByStatusRequest
+	83, // 65: vassago.Vassago.ResetTimedOutTasks:input_type -> vassago.ResetTimedOutTasksRequest
+	85, // 66: vassago.Vassago.DeleteTask:input_type -> vassago.DeleteTaskRequest
+	39, // 67: vassago.AgentChat.ChatStream:input_type -> vassago.ChatRequest
+	41, // 68: vassago.AgentChat.Ping:input_type -> vassago.HealthCheckRequest
+	50, // 69: vassago.CronService.CreateCronJob:input_type -> vassago.CreateCronJobRequest
+	51, // 70: vassago.CronService.ListCronJobs:input_type -> vassago.ListCronJobsRequest
+	53, // 71: vassago.CronService.UpdateCronJob:input_type -> vassago.UpdateCronJobRequest
+	54, // 72: vassago.CronService.DeleteCronJob:input_type -> vassago.DeleteCronJobRequest
+	42, // 73: vassago.Vassago.Ping:output_type -> vassago.HealthCheckResponse
+	5,  // 74: vassago.Vassago.AddMemory:output_type -> vassago.AddMemoryResponse
+	3,  // 75: vassago.Vassago.GetMemory:output_type -> vassago.MemoryEntry
+	3,  // 76: vassago.Vassago.UpdateMemory:output_type -> vassago.MemoryEntry
+	9,  // 77: vassago.Vassago.RemoveMemory:output_type -> vassago.RemoveMemoryResponse
+	11, // 78: vassago.Vassago.ListMemories:output_type -> vassago.MemoryList
+	13, // 79: vassago.Vassago.Search:output_type -> vassago.SearchResponse
+	15, // 80: vassago.Vassago.SearchSessions:output_type -> vassago.SearchSessionsResponse
+	17, // 81: vassago.Vassago.ListSessions:output_type -> vassago.ListSessionsResponse
+	20, // 82: vassago.Vassago.GetHotBlock:output_type -> vassago.HotBlockResponse
+	21, // 83: vassago.Vassago.CreateSession:output_type -> vassago.Session
+	21, // 84: vassago.Vassago.AddMessages:output_type -> vassago.Session
+	26, // 85: vassago.Vassago.EndSession:output_type -> vassago.EndSessionResponse
+	21, // 86: vassago.Vassago.GetSession:output_type -> vassago.Session
+	29, // 87: vassago.Vassago.Consolidate:output_type -> vassago.ConsolidateResponse
+	32, // 88: vassago.Vassago.GetConsolidationCandidates:output_type -> vassago.ConsolidationCandidatesResponse
+	34, // 89: vassago.Vassago.Subscribe:output_type -> vassago.UpdateEvent
+	37, // 90: vassago.Vassago.RegisterAgent:output_type -> vassago.RegisterAgentResponse
+	43, // 91: vassago.Vassago.Heartbeat:output_type -> vassago.Empty
+	40, // 92: vassago.Vassago.ChatStream:output_type -> vassago.ChatEvent
+	44, // 93: vassago.Vassago.AddTodo:output_type -> vassago.TodoItem
+	44, // 94: vassago.Vassago.ListTodos:output_type -> vassago.TodoItem
+	44, // 95: vassago.Vassago.CompleteTodo:output_type -> vassago.TodoItem
+	43, // 96: vassago.Vassago.RemoveTodo:output_type -> vassago.Empty
+	55, // 97: vassago.Vassago.AddSkill:output_type -> vassago.SkillEntry
+	55, // 98: vassago.Vassago.GetSkill:output_type -> vassago.SkillEntry
+	59, // 99: vassago.Vassago.ListSkills:output_type -> vassago.SkillList
+	61, // 100: vassago.Vassago.RemoveSkill:output_type -> vassago.RemoveSkillResponse
+	59, // 101: vassago.Vassago.SearchSkills:output_type -> vassago.SkillList
+	63, // 102: vassago.Vassago.AddSavedTool:output_type -> vassago.SavedToolEntry
+	63, // 103: vassago.Vassago.GetSavedTool:output_type -> vassago.SavedToolEntry
+	67, // 104: vassago.Vassago.ListSavedTools:output_type -> vassago.SavedToolList
+	67, // 105: vassago.Vassago.SearchSavedTools:output_type -> vassago.SavedToolList
+	63, // 106: vassago.Vassago.UpdateSavedTool:output_type -> vassago.SavedToolEntry
+	71, // 107: vassago.Vassago.RemoveSavedTool:output_type -> vassago.RemoveSavedToolResponse
+	73, // 108: vassago.Vassago.SyncChanges:output_type -> vassago.SyncChangesResponse
+	74, // 109: vassago.Vassago.AddTask:output_type -> vassago.TaskEntry
+	74, // 110: vassago.Vassago.GetTask:output_type -> vassago.TaskEntry
+	74, // 111: vassago.Vassago.ClaimTask:output_type -> vassago.TaskEntry
+	74, // 112: vassago.Vassago.CompleteTask:output_type -> vassago.TaskEntry
+	74, // 113: vassago.Vassago.FailTask:output_type -> vassago.TaskEntry
+	82, // 114: vassago.Vassago.FindReadyTasks:output_type -> vassago.TaskList
+	82, // 115: vassago.Vassago.ListTasksByStatus:output_type -> vassago.TaskList
+	84, // 116: vassago.Vassago.ResetTimedOutTasks:output_type -> vassago.ResetTimedOutTasksResponse
+	86, // 117: vassago.Vassago.DeleteTask:output_type -> vassago.DeleteTaskResponse
+	40, // 118: vassago.AgentChat.ChatStream:output_type -> vassago.ChatEvent
+	42, // 119: vassago.AgentChat.Ping:output_type -> vassago.HealthCheckResponse
+	49, // 120: vassago.CronService.CreateCronJob:output_type -> vassago.CronJob
+	52, // 121: vassago.CronService.ListCronJobs:output_type -> vassago.CronJobList
+	49, // 122: vassago.CronService.UpdateCronJob:output_type -> vassago.CronJob
+	43, // 123: vassago.CronService.DeleteCronJob:output_type -> vassago.Empty
+	73, // [73:124] is the sub-list for method output_type
+	22, // [22:73] is the sub-list for method input_type
+	22, // [22:22] is the sub-list for extension type_name
+	22, // [22:22] is the sub-list for extension extendee
+	0,  // [0:22] is the sub-list for field type_name
 }
 
-func init() { file_vassago_proto_init() }
-func file_vassago_proto_init() {
-	if File_vassago_proto != nil {
+func init() { file_proto_vassago_proto_init() }
+func file_proto_vassago_proto_init() {
+	if File_proto_vassago_proto != nil {
 		return
 	}
-	file_vassago_proto_msgTypes[4].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[7].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[9].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[11].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[13].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[24].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[25].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[27].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[43].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[47].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[50].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[53].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[55].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[59].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[61].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[63].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[65].OneofWrappers = []any{}
-	file_vassago_proto_msgTypes[66].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[4].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[7].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[9].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[11].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[13].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[24].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[25].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[27].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[43].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[47].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[50].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[53].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[55].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[59].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[61].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[63].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[65].OneofWrappers = []any{}
+	file_proto_vassago_proto_msgTypes[66].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_vassago_proto_rawDesc), len(file_vassago_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_vassago_proto_rawDesc), len(file_proto_vassago_proto_rawDesc)),
 			NumEnums:      3,
-			NumMessages:   71,
+			NumMessages:   84,
 			NumExtensions: 0,
 			NumServices:   3,
 		},
-		GoTypes:           file_vassago_proto_goTypes,
-		DependencyIndexes: file_vassago_proto_depIdxs,
-		EnumInfos:         file_vassago_proto_enumTypes,
-		MessageInfos:      file_vassago_proto_msgTypes,
+		GoTypes:           file_proto_vassago_proto_goTypes,
+		DependencyIndexes: file_proto_vassago_proto_depIdxs,
+		EnumInfos:         file_proto_vassago_proto_enumTypes,
+		MessageInfos:      file_proto_vassago_proto_msgTypes,
 	}.Build()
-	File_vassago_proto = out.File
-	file_vassago_proto_goTypes = nil
-	file_vassago_proto_depIdxs = nil
+	File_proto_vassago_proto = out.File
+	file_proto_vassago_proto_goTypes = nil
+	file_proto_vassago_proto_depIdxs = nil
 }

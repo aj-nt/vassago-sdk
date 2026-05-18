@@ -771,3 +771,123 @@ func optionalBool(b bool) *bool {
 func optionalInt32(value int32) *int32 {
 	return &value
 }
+
+
+// --- Task Management ---
+
+func protoTaskToEntry(pb *pb.TaskEntry) *TaskEntry {
+	if pb == nil {
+		return nil
+	}
+	return &TaskEntry{
+		Id:            pb.Id,
+		ParentIds:     pb.ParentIds,
+		Status:        pb.Status,
+		AgentType:     pb.AgentType,
+		AssignedAgent: pb.AssignedAgent,
+		Goal:          pb.Goal,
+		Context:       pb.Context,
+		ResultKey:     pb.ResultKey,
+		Priority:      pb.Priority,
+		CreatedAt:     pb.CreatedAt,
+		ClaimedAt:     pb.ClaimedAt,
+		CompletedAt:   pb.CompletedAt,
+		TtlSeconds:    pb.TtlSeconds,
+		RetryCount:    pb.RetryCount,
+		MaxRetries:    pb.MaxRetries,
+	}
+}
+
+func (c *Client) AddTask(ctx context.Context, id, agentType, goal, contextJSON string, priority, ttlSeconds, maxRetries int32) (*TaskEntry, error) {
+	resp, err := c.api.AddTask(ctx, &pb.AddTaskRequest{
+		Id:         id,
+		AgentType:  agentType,
+		Goal:       goal,
+		Context:    contextJSON,
+		Priority:   priority,
+		TtlSeconds: ttlSeconds,
+		MaxRetries: maxRetries,
+	})
+	if err != nil {
+		return nil, fmt.Errorf("AddTask: %w", err)
+	}
+	return protoTaskToEntry(resp), nil
+}
+
+func (c *Client) GetTask(ctx context.Context, id string) (*TaskEntry, error) {
+	resp, err := c.api.GetTask(ctx, &pb.GetTaskRequest{Id: id})
+	if err != nil {
+		return nil, fmt.Errorf("GetTask: %w", err)
+	}
+	return protoTaskToEntry(resp), nil
+}
+
+func (c *Client) ClaimTask(ctx context.Context, taskID, agentID string) (*TaskEntry, error) {
+	resp, err := c.api.ClaimTask(ctx, &pb.ClaimTaskRequest{TaskId: taskID, AgentId: agentID})
+	if err != nil {
+		return nil, fmt.Errorf("ClaimTask: %w", err)
+	}
+	return protoTaskToEntry(resp), nil
+}
+
+func (c *Client) CompleteTask(ctx context.Context, taskID, resultKey string) (*TaskEntry, error) {
+	resp, err := c.api.CompleteTask(ctx, &pb.CompleteTaskRequest{TaskId: taskID, ResultKey: resultKey})
+	if err != nil {
+		return nil, fmt.Errorf("CompleteTask: %w", err)
+	}
+	return protoTaskToEntry(resp), nil
+}
+
+func (c *Client) FailTask(ctx context.Context, taskID string) (*TaskEntry, error) {
+	resp, err := c.api.FailTask(ctx, &pb.FailTaskRequest{TaskId: taskID})
+	if err != nil {
+		return nil, fmt.Errorf("FailTask: %w", err)
+	}
+	return protoTaskToEntry(resp), nil
+}
+
+func (c *Client) FindReadyTasks(ctx context.Context, agentType string, limit int32) ([]*TaskEntry, error) {
+	resp, err := c.api.FindReadyTasks(ctx, &pb.FindReadyTasksRequest{
+		AgentType: agentType,
+		Limit:     limit,
+	})
+	if err != nil {
+		return nil, fmt.Errorf("FindReadyTasks: %w", err)
+	}
+	entries := make([]*TaskEntry, len(resp.Tasks))
+	for i, t := range resp.Tasks {
+		entries[i] = protoTaskToEntry(t)
+	}
+	return entries, nil
+}
+
+func (c *Client) ListTasksByStatus(ctx context.Context, status string, limit int32) ([]*TaskEntry, error) {
+	resp, err := c.api.ListTasksByStatus(ctx, &pb.ListTasksByStatusRequest{
+		Status: status,
+		Limit:  limit,
+	})
+	if err != nil {
+		return nil, fmt.Errorf("ListTasksByStatus: %w", err)
+	}
+	entries := make([]*TaskEntry, len(resp.Tasks))
+	for i, t := range resp.Tasks {
+		entries[i] = protoTaskToEntry(t)
+	}
+	return entries, nil
+}
+
+func (c *Client) ResetTimedOutTasks(ctx context.Context) (*ResetTimedOutResp, error) {
+	resp, err := c.api.ResetTimedOutTasks(ctx, &pb.ResetTimedOutTasksRequest{})
+	if err != nil {
+		return nil, fmt.Errorf("ResetTimedOutTasks: %w", err)
+	}
+	return &ResetTimedOutResp{ResetIds: resp.ResetIds, Count: resp.Count}, nil
+}
+
+func (c *Client) DeleteTask(ctx context.Context, id string) (bool, error) {
+	resp, err := c.api.DeleteTask(ctx, &pb.DeleteTaskRequest{Id: id})
+	if err != nil {
+		return false, fmt.Errorf("DeleteTask: %w", err)
+	}
+	return resp.Deleted, nil
+}

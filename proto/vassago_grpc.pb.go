@@ -5,7 +5,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.2
 // - protoc             v7.34.1
-// source: vassago.proto
+// source: proto/vassago.proto
 
 package proto
 
@@ -58,6 +58,15 @@ const (
 	Vassago_UpdateSavedTool_FullMethodName            = "/vassago.Vassago/UpdateSavedTool"
 	Vassago_RemoveSavedTool_FullMethodName            = "/vassago.Vassago/RemoveSavedTool"
 	Vassago_SyncChanges_FullMethodName                = "/vassago.Vassago/SyncChanges"
+	Vassago_AddTask_FullMethodName                    = "/vassago.Vassago/AddTask"
+	Vassago_GetTask_FullMethodName                    = "/vassago.Vassago/GetTask"
+	Vassago_ClaimTask_FullMethodName                  = "/vassago.Vassago/ClaimTask"
+	Vassago_CompleteTask_FullMethodName               = "/vassago.Vassago/CompleteTask"
+	Vassago_FailTask_FullMethodName                   = "/vassago.Vassago/FailTask"
+	Vassago_FindReadyTasks_FullMethodName             = "/vassago.Vassago/FindReadyTasks"
+	Vassago_ListTasksByStatus_FullMethodName          = "/vassago.Vassago/ListTasksByStatus"
+	Vassago_ResetTimedOutTasks_FullMethodName         = "/vassago.Vassago/ResetTimedOutTasks"
+	Vassago_DeleteTask_FullMethodName                 = "/vassago.Vassago/DeleteTask"
 )
 
 // VassagoClient is the client API for Vassago service.
@@ -117,6 +126,16 @@ type VassagoClient interface {
 	// SyncChanges returns memory deltas since a given timestamp for a namespace.
 	// Peer daemons call this to pull changes during replication.
 	SyncChanges(ctx context.Context, in *SyncChangesRequest, opts ...grpc.CallOption) (*SyncChangesResponse, error)
+	// --- Task Management (Multi-Agent Orchestration) ---
+	AddTask(ctx context.Context, in *AddTaskRequest, opts ...grpc.CallOption) (*TaskEntry, error)
+	GetTask(ctx context.Context, in *GetTaskRequest, opts ...grpc.CallOption) (*TaskEntry, error)
+	ClaimTask(ctx context.Context, in *ClaimTaskRequest, opts ...grpc.CallOption) (*TaskEntry, error)
+	CompleteTask(ctx context.Context, in *CompleteTaskRequest, opts ...grpc.CallOption) (*TaskEntry, error)
+	FailTask(ctx context.Context, in *FailTaskRequest, opts ...grpc.CallOption) (*TaskEntry, error)
+	FindReadyTasks(ctx context.Context, in *FindReadyTasksRequest, opts ...grpc.CallOption) (*TaskList, error)
+	ListTasksByStatus(ctx context.Context, in *ListTasksByStatusRequest, opts ...grpc.CallOption) (*TaskList, error)
+	ResetTimedOutTasks(ctx context.Context, in *ResetTimedOutTasksRequest, opts ...grpc.CallOption) (*ResetTimedOutTasksResponse, error)
+	DeleteTask(ctx context.Context, in *DeleteTaskRequest, opts ...grpc.CallOption) (*DeleteTaskResponse, error)
 }
 
 type vassagoClient struct {
@@ -514,6 +533,96 @@ func (c *vassagoClient) SyncChanges(ctx context.Context, in *SyncChangesRequest,
 	return out, nil
 }
 
+func (c *vassagoClient) AddTask(ctx context.Context, in *AddTaskRequest, opts ...grpc.CallOption) (*TaskEntry, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TaskEntry)
+	err := c.cc.Invoke(ctx, Vassago_AddTask_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vassagoClient) GetTask(ctx context.Context, in *GetTaskRequest, opts ...grpc.CallOption) (*TaskEntry, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TaskEntry)
+	err := c.cc.Invoke(ctx, Vassago_GetTask_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vassagoClient) ClaimTask(ctx context.Context, in *ClaimTaskRequest, opts ...grpc.CallOption) (*TaskEntry, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TaskEntry)
+	err := c.cc.Invoke(ctx, Vassago_ClaimTask_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vassagoClient) CompleteTask(ctx context.Context, in *CompleteTaskRequest, opts ...grpc.CallOption) (*TaskEntry, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TaskEntry)
+	err := c.cc.Invoke(ctx, Vassago_CompleteTask_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vassagoClient) FailTask(ctx context.Context, in *FailTaskRequest, opts ...grpc.CallOption) (*TaskEntry, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TaskEntry)
+	err := c.cc.Invoke(ctx, Vassago_FailTask_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vassagoClient) FindReadyTasks(ctx context.Context, in *FindReadyTasksRequest, opts ...grpc.CallOption) (*TaskList, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TaskList)
+	err := c.cc.Invoke(ctx, Vassago_FindReadyTasks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vassagoClient) ListTasksByStatus(ctx context.Context, in *ListTasksByStatusRequest, opts ...grpc.CallOption) (*TaskList, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TaskList)
+	err := c.cc.Invoke(ctx, Vassago_ListTasksByStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vassagoClient) ResetTimedOutTasks(ctx context.Context, in *ResetTimedOutTasksRequest, opts ...grpc.CallOption) (*ResetTimedOutTasksResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ResetTimedOutTasksResponse)
+	err := c.cc.Invoke(ctx, Vassago_ResetTimedOutTasks_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vassagoClient) DeleteTask(ctx context.Context, in *DeleteTaskRequest, opts ...grpc.CallOption) (*DeleteTaskResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteTaskResponse)
+	err := c.cc.Invoke(ctx, Vassago_DeleteTask_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VassagoServer is the server API for Vassago service.
 // All implementations must embed UnimplementedVassagoServer
 // for forward compatibility.
@@ -571,6 +680,16 @@ type VassagoServer interface {
 	// SyncChanges returns memory deltas since a given timestamp for a namespace.
 	// Peer daemons call this to pull changes during replication.
 	SyncChanges(context.Context, *SyncChangesRequest) (*SyncChangesResponse, error)
+	// --- Task Management (Multi-Agent Orchestration) ---
+	AddTask(context.Context, *AddTaskRequest) (*TaskEntry, error)
+	GetTask(context.Context, *GetTaskRequest) (*TaskEntry, error)
+	ClaimTask(context.Context, *ClaimTaskRequest) (*TaskEntry, error)
+	CompleteTask(context.Context, *CompleteTaskRequest) (*TaskEntry, error)
+	FailTask(context.Context, *FailTaskRequest) (*TaskEntry, error)
+	FindReadyTasks(context.Context, *FindReadyTasksRequest) (*TaskList, error)
+	ListTasksByStatus(context.Context, *ListTasksByStatusRequest) (*TaskList, error)
+	ResetTimedOutTasks(context.Context, *ResetTimedOutTasksRequest) (*ResetTimedOutTasksResponse, error)
+	DeleteTask(context.Context, *DeleteTaskRequest) (*DeleteTaskResponse, error)
 	mustEmbedUnimplementedVassagoServer()
 }
 
@@ -688,6 +807,33 @@ func (UnimplementedVassagoServer) RemoveSavedTool(context.Context, *RemoveSavedT
 }
 func (UnimplementedVassagoServer) SyncChanges(context.Context, *SyncChangesRequest) (*SyncChangesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SyncChanges not implemented")
+}
+func (UnimplementedVassagoServer) AddTask(context.Context, *AddTaskRequest) (*TaskEntry, error) {
+	return nil, status.Error(codes.Unimplemented, "method AddTask not implemented")
+}
+func (UnimplementedVassagoServer) GetTask(context.Context, *GetTaskRequest) (*TaskEntry, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTask not implemented")
+}
+func (UnimplementedVassagoServer) ClaimTask(context.Context, *ClaimTaskRequest) (*TaskEntry, error) {
+	return nil, status.Error(codes.Unimplemented, "method ClaimTask not implemented")
+}
+func (UnimplementedVassagoServer) CompleteTask(context.Context, *CompleteTaskRequest) (*TaskEntry, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompleteTask not implemented")
+}
+func (UnimplementedVassagoServer) FailTask(context.Context, *FailTaskRequest) (*TaskEntry, error) {
+	return nil, status.Error(codes.Unimplemented, "method FailTask not implemented")
+}
+func (UnimplementedVassagoServer) FindReadyTasks(context.Context, *FindReadyTasksRequest) (*TaskList, error) {
+	return nil, status.Error(codes.Unimplemented, "method FindReadyTasks not implemented")
+}
+func (UnimplementedVassagoServer) ListTasksByStatus(context.Context, *ListTasksByStatusRequest) (*TaskList, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListTasksByStatus not implemented")
+}
+func (UnimplementedVassagoServer) ResetTimedOutTasks(context.Context, *ResetTimedOutTasksRequest) (*ResetTimedOutTasksResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ResetTimedOutTasks not implemented")
+}
+func (UnimplementedVassagoServer) DeleteTask(context.Context, *DeleteTaskRequest) (*DeleteTaskResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteTask not implemented")
 }
 func (UnimplementedVassagoServer) mustEmbedUnimplementedVassagoServer() {}
 func (UnimplementedVassagoServer) testEmbeddedByValue()                 {}
@@ -1337,6 +1483,168 @@ func _Vassago_SyncChanges_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Vassago_AddTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VassagoServer).AddTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Vassago_AddTask_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VassagoServer).AddTask(ctx, req.(*AddTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Vassago_GetTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VassagoServer).GetTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Vassago_GetTask_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VassagoServer).GetTask(ctx, req.(*GetTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Vassago_ClaimTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ClaimTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VassagoServer).ClaimTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Vassago_ClaimTask_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VassagoServer).ClaimTask(ctx, req.(*ClaimTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Vassago_CompleteTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompleteTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VassagoServer).CompleteTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Vassago_CompleteTask_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VassagoServer).CompleteTask(ctx, req.(*CompleteTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Vassago_FailTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FailTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VassagoServer).FailTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Vassago_FailTask_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VassagoServer).FailTask(ctx, req.(*FailTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Vassago_FindReadyTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FindReadyTasksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VassagoServer).FindReadyTasks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Vassago_FindReadyTasks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VassagoServer).FindReadyTasks(ctx, req.(*FindReadyTasksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Vassago_ListTasksByStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListTasksByStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VassagoServer).ListTasksByStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Vassago_ListTasksByStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VassagoServer).ListTasksByStatus(ctx, req.(*ListTasksByStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Vassago_ResetTimedOutTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResetTimedOutTasksRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VassagoServer).ResetTimedOutTasks(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Vassago_ResetTimedOutTasks_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VassagoServer).ResetTimedOutTasks(ctx, req.(*ResetTimedOutTasksRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Vassago_DeleteTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VassagoServer).DeleteTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Vassago_DeleteTask_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VassagoServer).DeleteTask(ctx, req.(*DeleteTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Vassago_ServiceDesc is the grpc.ServiceDesc for Vassago service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1476,6 +1784,42 @@ var Vassago_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "SyncChanges",
 			Handler:    _Vassago_SyncChanges_Handler,
 		},
+		{
+			MethodName: "AddTask",
+			Handler:    _Vassago_AddTask_Handler,
+		},
+		{
+			MethodName: "GetTask",
+			Handler:    _Vassago_GetTask_Handler,
+		},
+		{
+			MethodName: "ClaimTask",
+			Handler:    _Vassago_ClaimTask_Handler,
+		},
+		{
+			MethodName: "CompleteTask",
+			Handler:    _Vassago_CompleteTask_Handler,
+		},
+		{
+			MethodName: "FailTask",
+			Handler:    _Vassago_FailTask_Handler,
+		},
+		{
+			MethodName: "FindReadyTasks",
+			Handler:    _Vassago_FindReadyTasks_Handler,
+		},
+		{
+			MethodName: "ListTasksByStatus",
+			Handler:    _Vassago_ListTasksByStatus_Handler,
+		},
+		{
+			MethodName: "ResetTimedOutTasks",
+			Handler:    _Vassago_ResetTimedOutTasks_Handler,
+		},
+		{
+			MethodName: "DeleteTask",
+			Handler:    _Vassago_DeleteTask_Handler,
+		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
@@ -1494,7 +1838,7 @@ var Vassago_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "vassago.proto",
+	Metadata: "proto/vassago.proto",
 }
 
 const (
@@ -1646,7 +1990,7 @@ var AgentChat_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 	},
-	Metadata: "vassago.proto",
+	Metadata: "proto/vassago.proto",
 }
 
 const (
@@ -1876,5 +2220,5 @@ var CronService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "vassago.proto",
+	Metadata: "proto/vassago.proto",
 }

@@ -193,6 +193,43 @@ func (n *NullMnemo) RemoveSavedTool(ctx context.Context, id string) (bool, error
 	return false, fmt.Errorf("vassago not connected")
 }
 
+
+func (n *NullMnemo) AddTask(ctx context.Context, id, agentType, goal, context string, priority, ttlSeconds, maxRetries int32) (*TaskEntry, error) {
+	return nil, fmt.Errorf("vassago not connected")
+}
+
+func (n *NullMnemo) GetTask(ctx context.Context, id string) (*TaskEntry, error) {
+	return nil, fmt.Errorf("vassago not connected")
+}
+
+func (n *NullMnemo) ClaimTask(ctx context.Context, taskID, agentID string) (*TaskEntry, error) {
+	return nil, fmt.Errorf("vassago not connected")
+}
+
+func (n *NullMnemo) CompleteTask(ctx context.Context, taskID, resultKey string) (*TaskEntry, error) {
+	return nil, fmt.Errorf("vassago not connected")
+}
+
+func (n *NullMnemo) FailTask(ctx context.Context, taskID string) (*TaskEntry, error) {
+	return nil, fmt.Errorf("vassago not connected")
+}
+
+func (n *NullMnemo) FindReadyTasks(ctx context.Context, agentType string, limit int32) ([]*TaskEntry, error) {
+	return nil, nil
+}
+
+func (n *NullMnemo) ListTasksByStatus(ctx context.Context, status string, limit int32) ([]*TaskEntry, error) {
+	return nil, nil
+}
+
+func (n *NullMnemo) ResetTimedOutTasks(ctx context.Context) (*ResetTimedOutResp, error) {
+	return &ResetTimedOutResp{}, nil
+}
+
+func (n *NullMnemo) DeleteTask(ctx context.Context, id string) (bool, error) {
+	return false, fmt.Errorf("vassago not connected")
+}
+
 func (n *NullMnemo) Close() error {
 	return nil
 }
