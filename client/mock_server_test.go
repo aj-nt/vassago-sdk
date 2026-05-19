@@ -435,7 +435,7 @@ func setupMockServer(t *testing.T) (*Client, *mockVassagoServer, *grpc.ClientCon
 	go func() { _ = s.Serve(lis) }()
 	t.Cleanup(s.Stop)
 
-	conn, err := grpc.Dial("bufnet",
+	conn, err := grpc.Dial("bufnet", // nolint:staticcheck // grpc.Dial deprecated but used in tests
 		grpc.WithContextDialer(func(ctx context.Context, _ string) (net.Conn, error) {
 			return lis.DialContext(ctx)
 		}),
