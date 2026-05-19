@@ -392,7 +392,7 @@ func TestClientGRPC_CronCRUD(t *testing.T) {
 	_ = mockSrv // Use mock server for cron job storage
 
 	// Register agent first (cron jobs reference agent IDs)
-	_, _ = c.RegisterAgent(ctx, "cron-agent", "CronAgent", "test")
+	_, _, _ = c.RegisterAgent(ctx, "cron-agent", "CronAgent", "test")
 
 	// CreateCronJob
 	enabled := true
