@@ -1,1 +1,9 @@
 vagent
+
+# Python generated stubs
+proto/*_pb2.py
+proto/*_pb2_grpc.py
+proto/*_pb2.pyi
+
+# Build artifacts
+github.com/
