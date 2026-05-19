@@ -392,7 +392,7 @@ func TestClientGRPC_CronCRUD(t *testing.T) {
 	_ = mockSrv // Use mock server for cron job storage
 
 	// Register agent first (cron jobs reference agent IDs)
-	c.RegisterAgent(ctx, "cron-agent", "CronAgent", "test")
+	_, _ = c.RegisterAgent(ctx, "cron-agent", "CronAgent", "test")
 
 	// CreateCronJob
 	enabled := true
@@ -743,8 +743,8 @@ func TestClientGRPC_ListSkills(t *testing.T) {
 	c, _, _ := setupMockServer(t)
 	ctx := context.Background()
 
-	c.AddSkill(ctx, "List Skill 1", "First", []string{"l1"}, "cat1", "C1", "agent1", 1)
-	c.AddSkill(ctx, "List Skill 2", "Second", []string{"l2"}, "cat2", "C2", "agent2", 2)
+	_, _ = c.AddSkill(ctx, "List Skill 1", "First", []string{"l1"}, "cat1", "C1", "agent1", 1)
+	_, _ = c.AddSkill(ctx, "List Skill 2", "Second", []string{"l2"}, "cat2", "C2", "agent2", 2)
 
 	skills, err := c.ListSkills(ctx, "", "", 20)
 	if err != nil {
@@ -759,7 +759,7 @@ func TestClientGRPC_SearchSkills(t *testing.T) {
 	c, _, _ := setupMockServer(t)
 	ctx := context.Background()
 
-	c.AddSkill(ctx, "DB Debug", "Debug database issues", []string{"db"}, "devops", "Database debugging steps", "ops-agent", 3)
+	_, _ = c.AddSkill(ctx, "DB Debug", "Debug database issues", []string{"db"}, "devops", "Database debugging steps", "ops-agent", 3)
 
 	skills, err := c.SearchSkills(ctx, "database", "", 10)
 	if err != nil {

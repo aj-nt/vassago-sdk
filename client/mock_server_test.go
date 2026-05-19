@@ -432,7 +432,7 @@ func setupMockServer(t *testing.T) (*Client, *mockVassagoServer, *grpc.ClientCon
 	pb.RegisterMessagingServer(s, msgSrv)
 	pb.RegisterCronServiceServer(s, cronSrv)
 
-	go s.Serve(lis)
+	go func() { _ = s.Serve(lis) }()
 	t.Cleanup(s.Stop)
 
 	conn, err := grpc.Dial("bufnet",
