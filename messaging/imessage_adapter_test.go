@@ -434,7 +434,7 @@ func TestIMessageAdapter_Poll_FilterFromMe(t *testing.T) {
 		// But since the real SQL query filters is_from_me=0, this test
 		// checks that even if a mock returns it, we handle the data
 		if event.Message == "from me" {
-			// This is OK — the real adapter uses SQL filtering
+			_ = event // OK — real adapter uses SQL filtering
 		}
 	case <-time.After(3 * time.Second):
 		// Poll might not have fired yet or the filter removed it

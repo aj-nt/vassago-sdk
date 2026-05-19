@@ -89,6 +89,7 @@ func TestOptionalString_NonEmpty(t *testing.T) {
 	result := optionalString("hello")
 	if result == nil {
 		t.Error("optionalString('hello') = nil, want non-nil")
+		return
 	}
 	if *result != "hello" {
 		t.Errorf("optionalString('hello') = %q, want %q", *result, "hello")
@@ -101,6 +102,7 @@ func TestOptionalBool_True(t *testing.T) {
 	result := optionalBool(true)
 	if result == nil {
 		t.Error("optionalBool(true) = nil, want non-nil")
+		return
 	}
 	if !*result {
 		t.Error("optionalBool(true) = false, want true")
@@ -111,6 +113,7 @@ func TestOptionalBool_False(t *testing.T) {
 	result := optionalBool(false)
 	if result == nil {
 		t.Error("optionalBool(false) = nil, want non-nil")
+		return
 	}
 	if *result {
 		t.Error("optionalBool(false) = true, want false")

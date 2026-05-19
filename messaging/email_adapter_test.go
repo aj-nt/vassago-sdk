@@ -35,8 +35,8 @@ func (m *mockEmailSender) SendSMTP(from string, to []string, subject, body strin
 // mockEmailFetcher implements emailFetcher for testing.
 type mockEmailFetcher struct {
 	messages []EmailMessage
-	channels []*pb.Channel
-	lastID   int32
+	channels []*pb.Channel // nolint:unused
+	lastID   int32         // nolint:unused
 	mu       sync.Mutex
 }
 

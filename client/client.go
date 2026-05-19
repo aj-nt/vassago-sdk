@@ -768,6 +768,7 @@ func optionalBool(b bool) *bool {
 	return &b
 }
 
+// nolint:unused
 func optionalInt32(value int32) *int32 {
 	return &value
 }

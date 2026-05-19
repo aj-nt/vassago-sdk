@@ -25,7 +25,7 @@ func TestAgentSession_RegisterViaGRPC(t *testing.T) {
 	go func() { _ = s.Serve(lis) }()
 	t.Cleanup(s.Stop)
 
-	conn, err := grpc.Dial("bufnet",
+	conn, err := grpc.Dial("bufnet", // nolint:staticcheck // grpc.Dial deprecated but used in tests
 		grpc.WithContextDialer(func(ctx context.Context, _ string) (net.Conn, error) {
 			return lis.DialContext(ctx)
 		}),
@@ -66,7 +66,7 @@ func TestAgentSession_RegisterTwiceViaGRPC(t *testing.T) {
 	go func() { _ = s.Serve(lis) }()
 	t.Cleanup(s.Stop)
 
-	conn, err := grpc.Dial("bufnet",
+	conn, err := grpc.Dial("bufnet", // nolint:staticcheck // grpc.Dial deprecated but used in tests
 		grpc.WithContextDialer(func(ctx context.Context, _ string) (net.Conn, error) {
 			return lis.DialContext(ctx)
 		}),
@@ -107,7 +107,7 @@ func TestAgentSession_SubscribeViaGRPC(t *testing.T) {
 	go func() { _ = s.Serve(lis) }()
 	t.Cleanup(s.Stop)
 
-	conn, err := grpc.Dial("bufnet",
+	conn, err := grpc.Dial("bufnet", // nolint:staticcheck // grpc.Dial deprecated but used in tests
 		grpc.WithContextDialer(func(ctx context.Context, _ string) (net.Conn, error) {
 			return lis.DialContext(ctx)
 		}),
@@ -153,7 +153,7 @@ func TestAgentSession_HeartbeatViaGRPC(t *testing.T) {
 	go func() { _ = s.Serve(lis) }()
 	t.Cleanup(s.Stop)
 
-	conn, err := grpc.Dial("bufnet",
+	conn, err := grpc.Dial("bufnet", // nolint:staticcheck // grpc.Dial deprecated but used in tests
 		grpc.WithContextDialer(func(ctx context.Context, _ string) (net.Conn, error) {
 			return lis.DialContext(ctx)
 		}),

@@ -19,7 +19,7 @@ type mockAgentAPI struct {
 	mu           sync.Mutex
 	registeredID string
 	heartbeatN   int
-	closed       bool
+	closed bool // nolint:unused
 
 	// Customizable behavior
 	registerFunc  func(ctx context.Context, agentID, name, role string) (string, bool, error)
