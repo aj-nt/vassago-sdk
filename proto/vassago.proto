@@ -306,6 +306,7 @@ message UpdateEvent {
     REMOVED = 3;
     HOT_BLOCK_CHANGED = 4;
     CRON_FIRE = 5;           // A cron job fired
+    TASK_STATUS_CHANGED = 6; // A task status changed
   }
   EventType event_type = 1;
   string target = 2;
@@ -315,6 +316,7 @@ message UpdateEvent {
   MemoryEntry entry = 6;     // The entry that changed (if ADDED/UPDATED)
   HotBlockResponse hot_block = 7; // Fresh hot block (if HOT_BLOCK_CHANGED)
   CronFireEvent cron_fire = 8;    // Cron job fire details (if CRON_FIRE)
+  TaskEntry task = 9;             // Task that changed (if TASK_STATUS_CHANGED)
 }
 
 // CronFireEvent is published when a cron job fires.
