@@ -1,0 +1,25 @@
+# .goreleaser.yml
+# Library-only — no binaries, just versioned GitHub releases.
+# https://goreleaser.com/customization/
+
+project_name: vassago-sdk
+
+before:
+  hooks:
+    - go mod tidy
+
+# No builds — pure library consumed via go get.
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  sort: asc
+  use: github
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+      - "^ci:"
+      - "^refactor:"
