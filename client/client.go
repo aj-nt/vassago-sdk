@@ -10,8 +10,10 @@ import (
 	"io"
 	"time"
 
+	"github.com/aj-nt/vassago-sdk/cauth"
 	pb "github.com/aj-nt/vassago-sdk/proto"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/insecure"
 )
 
@@ -91,6 +93,8 @@ func (c *Client) Subscribe(ctx context.Context, req *pb.SubscribeRequest) (pb.Va
 // Config holds client connection configuration.
 type Config struct {
 	Address string // "unix:///path/to/socket" or "localhost:50051"
+	APIKey  string // shared token for auth (sent as Bearer token)
+	TLSCert string // path to TLS CA cert for the server (empty = insecure)
 }
 
 // NewClientFromConn creates a Client from an existing gRPC connection.
@@ -105,10 +109,25 @@ func NewClientFromConn(conn *grpc.ClientConn) *Client {
 }
 
 // Connect creates a new client connection to the Vassago daemon.
+// If TLSCert is set, uses TLS; otherwise falls back to insecure.
+// If APIKey is set, it is sent as a Bearer token on every RPC.
 func Connect(ctx context.Context, cfg Config) (*Client, error) {
 	opts := []grpc.DialOption{
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
 	}
+
+	if cfg.TLSCert != "" {
+		creds, err := credentials.NewClientTLSFromFile(cfg.TLSCert, "")
+		if err != nil {
+			return nil, fmt.Errorf("load TLS cert: %w", err)
+		}
+		opts = []grpc.DialOption{grpc.WithTransportCredentials(creds)}
+	}
+
+	if cfg.APIKey != "" {
+		opts = append(opts, grpc.WithPerRPCCredentials(cauth.NewBearerToken(cfg.APIKey)))
+	}
+
 	conn, err := grpc.NewClient(cfg.Address, opts...)
 	if err != nil {
 		return nil, fmt.Errorf("connect: %w", err)
