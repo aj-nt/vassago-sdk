@@ -73,7 +73,7 @@ func (n *NullMnemo) ListMemories(ctx context.Context, target string, category *s
 	return nil, nil
 }
 
-func (n *NullMnemo) GetHotBlock(ctx context.Context, target, agentID string, charLimit int32, boostCategories, suppressCategories []string, boostPriority int32) (string, error) {
+func (n *NullMnemo) GetHotBlock(ctx context.Context, target MemoryTarget, agentID string, charLimit int32, boostCategories, suppressCategories []string, boostPriority int32) (string, error) {
 	return "", nil
 }
 

@@ -229,7 +229,7 @@ func (rc *ResilientClient) ListMemories(ctx context.Context, target string, cate
 }
 
 // GetHotBlock retrieves the computed hot block for an agent.
-func (rc *ResilientClient) GetHotBlock(ctx context.Context, target, agentID string, charLimit int32, boostCategories, suppressCategories []string, boostPriority int32) (string, error) {
+func (rc *ResilientClient) GetHotBlock(ctx context.Context, target MemoryTarget, agentID string, charLimit int32, boostCategories, suppressCategories []string, boostPriority int32) (string, error) {
 	c, err := rc.getClient()
 	if err != nil {
 		return "", err

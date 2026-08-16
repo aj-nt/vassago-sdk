@@ -36,6 +36,18 @@ type ResetTimedOutResp struct {
 	Count    int32
 }
 
+// MemoryTarget identifies which memory store to query.
+type MemoryTarget string
+
+const (
+	// TargetMemory queries the "memory" store (environment facts, conventions, tool quirks).
+	TargetMemory MemoryTarget = "memory"
+	// TargetUser queries the "user" store (who the user is — name, role, preferences).
+	TargetUser MemoryTarget = "user"
+	// TargetAll queries both stores. The store layer treats empty string as "no filter."
+	TargetAll MemoryTarget = ""
+)
+
 // MnemoClient is an interface for interacting with the Vassago daemon.
 type MnemoClient interface {
 	// IsConnected returns true if connected to the daemon.
@@ -66,7 +78,7 @@ type MnemoClient interface {
 	ListMemories(ctx context.Context, target string, category *string, minPriority *int32) ([]*pb.MemoryEntry, error)
 
 	// GetHotBlock retrieves the computed hot block for an agent.
-	GetHotBlock(ctx context.Context, target, agentID string, charLimit int32, boostCategories, suppressCategories []string, boostPriority int32) (string, error)
+	GetHotBlock(ctx context.Context, target MemoryTarget, agentID string, charLimit int32, boostCategories, suppressCategories []string, boostPriority int32) (string, error)
 
 	// CreateSession creates a new session.
 	CreateSession(ctx context.Context, agentID, source, title string) (string, error)

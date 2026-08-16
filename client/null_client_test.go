@@ -133,7 +133,7 @@ func TestNullMnemo_ReadOperationsReturnEmpty(t *testing.T) {
 	})
 
 	t.Run("GetHotBlock", func(t *testing.T) {
-		content, err := n.GetHotBlock(ctx, "target", "agent", 4000, nil, nil, 2)
+		content, err := n.GetHotBlock(ctx, TargetMemory, "agent", 4000, nil, nil, 2)
 		if err != nil {
 			t.Errorf("expected no error, got %v", err)
 		}

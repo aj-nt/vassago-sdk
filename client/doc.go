@@ -19,5 +19,5 @@
 //	defer conn.Close()
 //
 //	c := client.NewClient(conn)
-//	hb, err := c.GetHotBlock(context.Background(), "memory", 8000)
+//	hb, err := c.GetHotBlock(context.Background(), client.TargetMemory, "agent-id", 8000, nil, nil, 0)
 package client

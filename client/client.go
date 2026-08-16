@@ -28,7 +28,7 @@ type ClientInterface interface {
 	RemoveMemory(ctx context.Context, id string) error
 	SearchMemories(ctx context.Context, query string, target string, limit int32) ([]*pb.MemoryEntry, error)
 	ListMemories(ctx context.Context, target string, category *string, minPriority *int32) ([]*pb.MemoryEntry, error)
-	GetHotBlock(ctx context.Context, target, agentID string, charLimit int32, boostCategories, suppressCategories []string, boostPriority int32) (string, error)
+	GetHotBlock(ctx context.Context, target MemoryTarget, agentID string, charLimit int32, boostCategories, suppressCategories []string, boostPriority int32) (string, error)
 	AddSkill(ctx context.Context, name, description string, triggers []string, category, content, sourceAgent string, priority int32) (*pb.SkillEntry, error)
 	GetSkill(ctx context.Context, id string) (*pb.SkillEntry, error)
 	ListSkills(ctx context.Context, category, sourceAgent string, limit int32) ([]*pb.SkillEntry, error)
@@ -224,9 +224,9 @@ func (c *Client) ListMemories(ctx context.Context, target string, category *stri
 }
 
 // GetHotBlock retrieves the computed hot block for an agent.
-func (c *Client) GetHotBlock(ctx context.Context, target, agentID string, charLimit int32, boostCategories, suppressCategories []string, boostPriority int32) (string, error) {
+func (c *Client) GetHotBlock(ctx context.Context, target MemoryTarget, agentID string, charLimit int32, boostCategories, suppressCategories []string, boostPriority int32) (string, error) {
 	resp, err := c.api.GetHotBlock(ctx, &pb.HotBlockRequest{
-		Target:    target,
+		Target:    string(target),
 		AgentId:   agentID,
 		CharLimit: charLimit,
 		Config: &pb.HotBlockConfig{

@@ -139,7 +139,7 @@ func TestClientGRPC_GetHotBlock(t *testing.T) {
 	c, _, _ := setupMockServer(t)
 	ctx := context.Background()
 
-	block, err := c.GetHotBlock(ctx, "memory", "test-agent", 4000, nil, nil, 0)
+	block, err := c.GetHotBlock(ctx, TargetMemory, "test-agent", 4000, nil, nil, 0)
 	if err != nil {
 		t.Fatalf("GetHotBlock failed: %v", err)
 	}
@@ -615,7 +615,7 @@ func TestNullMnemo_AllReadMethods(t *testing.T) {
 		t.Errorf("ListMemories: expected nil, got %v", memories)
 	}
 
-	block, err := n.GetHotBlock(ctx, "memory", "agent", 4000, nil, nil, 0)
+	block, err := n.GetHotBlock(ctx, TargetMemory, "agent", 4000, nil, nil, 0)
 	if err != nil {
 		t.Errorf("GetHotBlock: unexpected error %v", err)
 	}
