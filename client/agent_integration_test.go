@@ -34,7 +34,7 @@ func TestAgentSession_RegisterViaGRPC(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed to dial bufconn: %v", err)
 	}
-	t.Cleanup(func() { conn.Close() })
+	t.Cleanup(func() { _ = conn.Close() })
 
 	c := NewClientFromConn(conn)
 
@@ -75,7 +75,7 @@ func TestAgentSession_RegisterTwiceViaGRPC(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed to dial bufconn: %v", err)
 	}
-	t.Cleanup(func() { conn.Close() })
+	t.Cleanup(func() { _ = conn.Close() })
 
 	c := NewClientFromConn(conn)
 
@@ -116,7 +116,7 @@ func TestAgentSession_SubscribeViaGRPC(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed to dial bufconn: %v", err)
 	}
-	t.Cleanup(func() { conn.Close() })
+	t.Cleanup(func() { _ = conn.Close() })
 
 	c := NewClientFromConn(conn)
 
@@ -162,7 +162,7 @@ func TestAgentSession_HeartbeatViaGRPC(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed to dial bufconn: %v", err)
 	}
-	t.Cleanup(func() { conn.Close() })
+	t.Cleanup(func() { _ = conn.Close() })
 
 	c := NewClientFromConn(conn)
 

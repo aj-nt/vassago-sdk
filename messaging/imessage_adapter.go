@@ -123,7 +123,7 @@ func (q *chatDBQuerier) QueryMessages(sinceROWID int64) ([]iMessageRow, error) {
 	if err != nil {
 		return nil, fmt.Errorf("query messages: %w", err)
 	}
-	defer rows.Close()
+	defer func() { _ = rows.Close() }()
 
 	var messages []iMessageRow
 	for rows.Next() {
@@ -159,7 +159,7 @@ func (q *chatDBQuerier) QueryChats() ([]*pb.Channel, error) {
 	if err != nil {
 		return nil, fmt.Errorf("query chats: %w", err)
 	}
-	defer rows.Close()
+	defer func() { _ = rows.Close() }()
 
 	var channels []*pb.Channel
 	for rows.Next() {
@@ -253,7 +253,7 @@ func (a *IMessageAdapter) Connect(ctx context.Context) error {
 
 	// Verify connection
 	if err := db.Ping(); err != nil {
-		db.Close()
+		_ = db.Close()
 		return fmt.Errorf("failed to ping iMessage database: %w", err)
 	}
 
