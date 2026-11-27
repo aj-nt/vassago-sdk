@@ -444,7 +444,7 @@ func setupMockServer(t *testing.T) (*Client, *mockVassagoServer, *grpc.ClientCon
 	if err != nil {
 		t.Fatalf("Failed to dial bufconn: %v", err)
 	}
-	t.Cleanup(func() { conn.Close() })
+	t.Cleanup(func() { _ = conn.Close() })
 
 	client := NewClientFromConn(conn)
 	return client, memoSrv, conn
