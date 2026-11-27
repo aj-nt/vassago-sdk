@@ -47,10 +47,15 @@ jobs:
         with:
           go-version-file: go.mod
 
+      # The action's default linter is built with an older Go and cannot read this
+      # module's export data once the go directive moves ("export data version 5 is
+      # greater than maximum supported version 2"). Pin a linter that is built with a
+      # current toolchain, the same one gaap uses, and install it as a binary.
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v9
         with:
-          install-mode: "goinstall"
+          version: v2.15.0
+          install-mode: "binary"
           args: --timeout=5m
 
   # ── Security scan ──

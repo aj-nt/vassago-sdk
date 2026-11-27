@@ -74,9 +74,9 @@ func (s *smtpSender) SendSMTP(from string, to []string, subject, body string) er
 	var msg strings.Builder
 
 	// Headers
-	msg.WriteString(fmt.Sprintf("From: %s\r\n", from))
-	msg.WriteString(fmt.Sprintf("To: %s\r\n", strings.Join(to, ", ")))
-	msg.WriteString(fmt.Sprintf("Subject: %s\r\n", subject))
+	fmt.Fprintf(&msg, "From: %s\r\n", from)
+	fmt.Fprintf(&msg, "To: %s\r\n", strings.Join(to, ", "))
+	fmt.Fprintf(&msg, "Subject: %s\r\n", subject)
 	msg.WriteString("MIME-Version: 1.0\r\n")
 	msg.WriteString("Content-Type: text/plain; charset=UTF-8\r\n")
 	msg.WriteString("Content-Transfer-Encoding: 7bit\r\n")
@@ -102,7 +102,7 @@ func (s *smtpSender) SendSMTP(from string, to []string, subject, body string) er
 	if err != nil {
 		return fmt.Errorf("failed to connect to SMTP server: %w", err)
 	}
-	defer client.Close()
+	defer func() { _ = client.Close() }()
 
 	if err := client.Auth(s.auth); err != nil {
 		return fmt.Errorf("SMTP authentication failed: %w", err)
@@ -222,7 +222,7 @@ func (a *EmailAdapter) Connect(ctx context.Context) error {
 		if err != nil {
 			return fmt.Errorf("failed to connect to SMTP server: %w", err)
 		}
-		client.Close()
+		_ = client.Close()
 	}
 
 	a.connected = true

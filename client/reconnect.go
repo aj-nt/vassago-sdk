@@ -122,7 +122,7 @@ func (rc *ResilientClient) reconnect(ctx context.Context) error {
 		return fmt.Errorf("client is closed")
 	}
 	if rc.client != nil {
-		rc.client.Close()
+		_ = rc.client.Close()
 		rc.client = nil
 	}
 	rc.mu.Unlock()

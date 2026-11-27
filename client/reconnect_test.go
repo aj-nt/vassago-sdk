@@ -76,7 +76,7 @@ func TestRawConnection(t *testing.T) {
 	if err != nil {
 		t.Fatalf("RawConnection should not fail on dial: %v", err)
 	}
-	conn.Close()
+	_ = conn.Close()
 }
 
 func TestIsConnectionError(t *testing.T) {

@@ -141,7 +141,7 @@ func Connect(ctx context.Context, cfg Config) (*Client, error) {
 		CharLimit: 1,
 	})
 	if err != nil {
-		conn.Close()
+		_ = conn.Close()
 		return nil, fmt.Errorf("health check: %w", err)
 	}
 
